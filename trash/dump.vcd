@@ -1,0 +1,1005 @@
+$date
+	Sun Apr 25 13:30:10 2021
+$end
+$version
+	QuestaSim Version 10.0b
+$end
+$timescale
+	1fs
+$end
+$scope module testbench_operation3 $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 1 # input_tp $end
+$var reg 1 $ op2_input_STB $end
+$var wire 1 % op2_BUSY $end
+$var wire 1 & output_x [31] $end
+$var wire 1 ' output_x [30] $end
+$var wire 1 ( output_x [29] $end
+$var wire 1 ) output_x [28] $end
+$var wire 1 * output_x [27] $end
+$var wire 1 + output_x [26] $end
+$var wire 1 , output_x [25] $end
+$var wire 1 - output_x [24] $end
+$var wire 1 . output_x [23] $end
+$var wire 1 / output_x [22] $end
+$var wire 1 0 output_x [21] $end
+$var wire 1 1 output_x [20] $end
+$var wire 1 2 output_x [19] $end
+$var wire 1 3 output_x [18] $end
+$var wire 1 4 output_x [17] $end
+$var wire 1 5 output_x [16] $end
+$var wire 1 6 output_x [15] $end
+$var wire 1 7 output_x [14] $end
+$var wire 1 8 output_x [13] $end
+$var wire 1 9 output_x [12] $end
+$var wire 1 : output_x [11] $end
+$var wire 1 ; output_x [10] $end
+$var wire 1 < output_x [9] $end
+$var wire 1 = output_x [8] $end
+$var wire 1 > output_x [7] $end
+$var wire 1 ? output_x [6] $end
+$var wire 1 @ output_x [5] $end
+$var wire 1 A output_x [4] $end
+$var wire 1 B output_x [3] $end
+$var wire 1 C output_x [2] $end
+$var wire 1 D output_x [1] $end
+$var wire 1 E output_x [0] $end
+$var wire 1 F op2_output_STB $end
+$var reg 1 G output_module_BUSY $end
+$var reg 1 H a $end
+$var reg 32 I result [31:0] $end
+$var real 0 J real_result $end
+$scope task give_inputs $end
+$upscope $end
+$scope task give_rst $end
+$upscope $end
+$scope task store_valid_inputs $end
+$upscope $end
+$scope task store_valid_outputs $end
+$upscope $end
+$scope task print_result $end
+$upscope $end
+$scope module op2_inst $end
+$var wire 1 K clk $end
+$var wire 1 L rst $end
+$var wire 1 M input_tp $end
+$var wire 1 N op2_input_STB $end
+$var wire 1 % op2_BUSY $end
+$var wire 1 F op2_output_STB $end
+$var wire 1 O output_module_BUSY $end
+$var wire 1 & output_x [31] $end
+$var wire 1 ' output_x [30] $end
+$var wire 1 ( output_x [29] $end
+$var wire 1 ) output_x [28] $end
+$var wire 1 * output_x [27] $end
+$var wire 1 + output_x [26] $end
+$var wire 1 , output_x [25] $end
+$var wire 1 - output_x [24] $end
+$var wire 1 . output_x [23] $end
+$var wire 1 / output_x [22] $end
+$var wire 1 0 output_x [21] $end
+$var wire 1 1 output_x [20] $end
+$var wire 1 2 output_x [19] $end
+$var wire 1 3 output_x [18] $end
+$var wire 1 4 output_x [17] $end
+$var wire 1 5 output_x [16] $end
+$var wire 1 6 output_x [15] $end
+$var wire 1 7 output_x [14] $end
+$var wire 1 8 output_x [13] $end
+$var wire 1 9 output_x [12] $end
+$var wire 1 : output_x [11] $end
+$var wire 1 ; output_x [10] $end
+$var wire 1 < output_x [9] $end
+$var wire 1 = output_x [8] $end
+$var wire 1 > output_x [7] $end
+$var wire 1 ? output_x [6] $end
+$var wire 1 @ output_x [5] $end
+$var wire 1 A output_x [4] $end
+$var wire 1 B output_x [3] $end
+$var wire 1 C output_x [2] $end
+$var wire 1 D output_x [1] $end
+$var wire 1 E output_x [0] $end
+$var reg 1 P a $end
+$var reg 1 Q op2_BUSY_reg $end
+$var reg 1 R op2_output_STB_reg $end
+$var reg 32 S output_x_temp [31:0] $end
+$var reg 5 T current_state [4:0] $end
+$upscope $end
+$upscope $end
+$scope begin std $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+x"
+x#
+x$
+xG
+xP
+xQ
+xR
+bx S
+bx T
+xH
+bx I
+r0 J
+x%
+xE
+xD
+xC
+xB
+xA
+x@
+x?
+x>
+x=
+x<
+x;
+x:
+x9
+x8
+x7
+x6
+x5
+x4
+x3
+x2
+x1
+x0
+x/
+x.
+x-
+x,
+x+
+x*
+x)
+x(
+x'
+x&
+xF
+xO
+xN
+xM
+xL
+0K
+$end
+#5000
+1!
+1K
+1"
+1L
+#10000
+0!
+0K
+#15000
+1!
+1K
+0Q
+0R
+b0 T
+0%
+0F
+#20000
+0!
+0K
+#25000
+1!
+1K
+#30000
+0!
+0K
+#35000
+1!
+1K
+0"
+0G
+0L
+0O
+#40000
+0!
+0K
+#45000
+1!
+1K
+1#
+1M
+1$
+1N
+#50000
+0!
+0K
+#55000
+1!
+1K
+1P
+b1 T
+#60000
+0!
+0K
+#65000
+1!
+1K
+b10 T
+#70000
+0!
+0K
+#75000
+1!
+1K
+1R
+b111111100000000000000000000000 S
+b100 T
+1F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+1.
+1-
+1,
+1+
+1*
+1)
+1(
+0'
+0&
+#80000
+0!
+0K
+#85000
+1!
+1K
+1H
+b111111100000000000000000000000 I
+r1 J
+0R
+b0 T
+0F
+#90000
+0!
+0K
+#95000
+1!
+1K
+b1 T
+#100000
+0!
+0K
+#105000
+1!
+1K
+b10 T
+#110000
+0!
+0K
+#115000
+1!
+1K
+1R
+b100 T
+1F
+#120000
+0!
+0K
+#125000
+1!
+1K
+0R
+b0 T
+0F
+#130000
+0!
+0K
+#135000
+1!
+1K
+b1 T
+#140000
+0!
+0K
+#145000
+1!
+1K
+b10 T
+#150000
+0!
+0K
+#155000
+1!
+1K
+1R
+b100 T
+1F
+#160000
+0!
+0K
+#165000
+1!
+1K
+0R
+b0 T
+0F
+#170000
+0!
+0K
+#175000
+1!
+1K
+b1 T
+#180000
+0!
+0K
+#185000
+1!
+1K
+b10 T
+#190000
+0!
+0K
+#195000
+1!
+1K
+1R
+b100 T
+1F
+#200000
+0!
+0K
+#205000
+1!
+1K
+0R
+b0 T
+0F
+#210000
+0!
+0K
+#215000
+1!
+1K
+b1 T
+#220000
+0!
+0K
+#225000
+1!
+1K
+b10 T
+#230000
+0!
+0K
+#235000
+1!
+1K
+1R
+b100 T
+1F
+#240000
+0!
+0K
+#245000
+1!
+1K
+0R
+b0 T
+0F
+#250000
+0!
+0K
+#255000
+1!
+1K
+b1 T
+#260000
+0!
+0K
+#265000
+1!
+1K
+b10 T
+#270000
+0!
+0K
+#275000
+1!
+1K
+1R
+b100 T
+1F
+#280000
+0!
+0K
+#285000
+1!
+1K
+0R
+b0 T
+0F
+#290000
+0!
+0K
+#295000
+1!
+1K
+b1 T
+#300000
+0!
+0K
+#305000
+1!
+1K
+b10 T
+#310000
+0!
+0K
+#315000
+1!
+1K
+1R
+b100 T
+1F
+#320000
+0!
+0K
+#325000
+1!
+1K
+0R
+b0 T
+0F
+#330000
+0!
+0K
+#335000
+1!
+1K
+b1 T
+#340000
+0!
+0K
+#345000
+1!
+1K
+b10 T
+#350000
+0!
+0K
+#355000
+1!
+1K
+1R
+b100 T
+1F
+#360000
+0!
+0K
+#365000
+1!
+1K
+0R
+b0 T
+0F
+#370000
+0!
+0K
+#375000
+1!
+1K
+b1 T
+#380000
+0!
+0K
+#385000
+1!
+1K
+b10 T
+#390000
+0!
+0K
+#395000
+1!
+1K
+1R
+b100 T
+1F
+#400000
+0!
+0K
+#405000
+1!
+1K
+0R
+b0 T
+0F
+#410000
+0!
+0K
+#415000
+1!
+1K
+b1 T
+#420000
+0!
+0K
+#425000
+1!
+1K
+b10 T
+#430000
+0!
+0K
+#435000
+1!
+1K
+1R
+b100 T
+1F
+#440000
+0!
+0K
+#445000
+1!
+1K
+0R
+b0 T
+0F
+#450000
+0!
+0K
+#455000
+1!
+1K
+b1 T
+#460000
+0!
+0K
+#465000
+1!
+1K
+b10 T
+#470000
+0!
+0K
+#475000
+1!
+1K
+1R
+b100 T
+1F
+#480000
+0!
+0K
+#485000
+1!
+1K
+0R
+b0 T
+0F
+#490000
+0!
+0K
+#495000
+1!
+1K
+b1 T
+#500000
+0!
+0K
+#505000
+1!
+1K
+b10 T
+#510000
+0!
+0K
+#515000
+1!
+1K
+1R
+b100 T
+1F
+#520000
+0!
+0K
+#525000
+1!
+1K
+0R
+b0 T
+0F
+#530000
+0!
+0K
+#535000
+1!
+1K
+b1 T
+#540000
+0!
+0K
+#545000
+1!
+1K
+b10 T
+#550000
+0!
+0K
+#555000
+1!
+1K
+1R
+b100 T
+1F
+#560000
+0!
+0K
+#565000
+1!
+1K
+0R
+b0 T
+0F
+#570000
+0!
+0K
+#575000
+1!
+1K
+b1 T
+#580000
+0!
+0K
+#585000
+1!
+1K
+b10 T
+#590000
+0!
+0K
+#595000
+1!
+1K
+1R
+b100 T
+1F
+#600000
+0!
+0K
+#605000
+1!
+1K
+0R
+b0 T
+0F
+#610000
+0!
+0K
+#615000
+1!
+1K
+b1 T
+#620000
+0!
+0K
+#625000
+1!
+1K
+b10 T
+#630000
+0!
+0K
+#635000
+1!
+1K
+1R
+b100 T
+1F
+#640000
+0!
+0K
+#645000
+1!
+1K
+0R
+b0 T
+0F
+#650000
+0!
+0K
+#655000
+1!
+1K
+b1 T
+#660000
+0!
+0K
+#665000
+1!
+1K
+b10 T
+#670000
+0!
+0K
+#675000
+1!
+1K
+1R
+b100 T
+1F
+#680000
+0!
+0K
+#685000
+1!
+1K
+0R
+b0 T
+0F
+#690000
+0!
+0K
+#695000
+1!
+1K
+b1 T
+#700000
+0!
+0K
+#705000
+1!
+1K
+b10 T
+#710000
+0!
+0K
+#715000
+1!
+1K
+1R
+b100 T
+1F
+#720000
+0!
+0K
+#725000
+1!
+1K
+0R
+b0 T
+0F
+#730000
+0!
+0K
+#735000
+1!
+1K
+b1 T
+#740000
+0!
+0K
+#745000
+1!
+1K
+b10 T
+#750000
+0!
+0K
+#755000
+1!
+1K
+1R
+b100 T
+1F
+#760000
+0!
+0K
+#765000
+1!
+1K
+0R
+b0 T
+0F
+#770000
+0!
+0K
+#775000
+1!
+1K
+b1 T
+#780000
+0!
+0K
+#785000
+1!
+1K
+b10 T
+#790000
+0!
+0K
+#795000
+1!
+1K
+1R
+b100 T
+1F
+#800000
+0!
+0K
+#805000
+1!
+1K
+0R
+b0 T
+0F
+#810000
+0!
+0K
+#815000
+1!
+1K
+b1 T
+#820000
+0!
+0K
+#825000
+1!
+1K
+b10 T
+#830000
+0!
+0K
+#835000
+1!
+1K
+1R
+b100 T
+1F
+#840000
+0!
+0K
+#845000
+1!
+1K
+0R
+b0 T
+0F
+#850000
+0!
+0K
+#855000
+1!
+1K
+b1 T
+#860000
+0!
+0K
+#865000
+1!
+1K
+b10 T
+#870000
+0!
+0K
+#875000
+1!
+1K
+1R
+b100 T
+1F
+#880000
+0!
+0K
+#885000
+1!
+1K
+0R
+b0 T
+0F
+#890000
+0!
+0K
+#895000
+1!
+1K
+b1 T
+#900000
+0!
+0K
+#905000
+1!
+1K
+b10 T
+#910000
+0!
+0K
+#915000
+1!
+1K
+1R
+b100 T
+1F
+#920000
+0!
+0K
+#925000
+1!
+1K
+0R
+b0 T
+0F
+#930000
+0!
+0K
+#935000
+1!
+1K
+b1 T
+#940000
+0!
+0K
+#945000
+1!
+1K
+b10 T
+#950000
+0!
+0K
+#955000
+1!
+1K
+1R
+b100 T
+1F
+#960000
+0!
+0K
+#965000
+1!
+1K
+0R
+b0 T
+0F
+#970000
+0!
+0K
+#975000
+1!
+1K
+b1 T
+#980000
+0!
+0K
+#985000
+1!
+1K
+b10 T
+#990000
+0!
+0K
+#995000
+1!
+1K
+1R
+b100 T
+1F

@@ -1,0 +1,50 @@
+Reading C:/questasim_10.0b/tcl/vsim/pref.tcl 
+
+# 10.0b
+
+# vsim -do {vsim -voptargs=+acc=npr; run -all; exit} -c -voptargs=+acc=npr testbench_operation1 
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim
+# //  Version 10.0b win32 May  5 2011
+# //
+# //  Copyright 1991-2011 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.testbench_operation1(fast)
+# Loading work.operation1(fast)
+# Loading work.multiplier(fast)
+# Loading work.adder(fast)
+# vsim -voptargs=+acc=npr 
+# No design specified
+#  run -all 
+# RESET HIGH @                 5000
+# RESET LOW @                35000
+# input_a=1.452080, input_b=1.116843, input_c=1.418739, input_d=1.398221 <------> result=4.606367, expected_result=3.605456
+# input_a=1.030638, input_b=1.407141, input_c=1.116410, input_d=1.470250 <------> result=5.377502, expected_result=3.091654
+# input_a=1.190426, input_b=1.183500, input_c=1.833127, input_d=1.628158 <------> result=5.539246, expected_result=4.393491
+# input_a=1.826338, input_b=1.292304, input_c=1.765240, input_d=1.323327 <------> result=3.789836, expected_result=4.696173
+# input_a=1.912059, input_b=1.979649, input_c=1.991701, input_d=1.992585 <------> result=3.343947, expected_result=7.753839
+# input_a=1.642405, input_b=1.883917, input_c=1.514800, input_d=1.639592 <------> result=3.564960, expected_result=5.577809
+# input_a=1.425969, input_b=1.479093, input_c=1.262270, input_d=1.389592 <------> result=3.807610, expected_result=3.863181
+# input_a=1.343271, input_b=1.099036, input_c=1.313614, input_d=1.035722 <------> result=5.499392, expected_result=2.836841
+# input_a=1.117302, input_b=1.474122, input_c=1.319576, input_d=1.273663 <------> result=3.934813, expected_result=3.327733
+# input_a=1.044594, input_b=1.256419, input_c=1.917454, input_d=1.268975 <------> result=5.425859, expected_result=3.745649
+# input_a=1.219468, input_b=1.635751, input_c=1.053371, input_d=1.610931 <------> result=5.052550, expected_result=3.691655
+# input_a=1.405655, input_b=1.561882, input_c=1.466636, input_d=1.736668 <------> result=3.627511, expected_result=4.742529
+# input_a=1.422845, input_b=1.411249, input_c=1.062755, input_d=1.477494 <------> result=3.829404, expected_result=3.578202
+# input_a=1.910644, input_b=1.666331, input_c=1.614446, input_d=1.671775 <------> result=4.812268, expected_result=5.882755
+# input_a=1.921813, input_b=1.955686, input_c=1.519906, input_d=1.184035 <------> result=4.622342, expected_result=5.558084
+# input_a=1.348027, input_b=1.355700, input_c=1.054555, input_d=1.312470 <------> result=5.461672, expected_result=3.211592
+# input_a=1.065840, input_b=1.561781, input_c=1.126586, input_d=1.545314 <------> result=5.082978, expected_result=3.405538
+# input_a=1.112460, input_b=1.243046, input_c=1.375814, input_d=1.323454 <------> result=3.709338, expected_result=3.203666
+# input_a=1.824144, input_b=1.957191, input_c=1.719996, input_d=1.319888 <------> result=3.610610, expected_result=5.840402
+# input_a=1.426448, input_b=1.694377, input_c=1.066085, input_d=1.904954 <------> result=4.395723, expected_result=4.447783
+# input_a=1.022402, input_b=1.846477, input_c=1.045199, input_d=1.775415 <------> result=4.894225, expected_result=3.743503
+# input_a=1.907922, input_b=1.632933, input_c=1.921376, input_d=1.536023 <------> result=3.408020, expected_result=6.066788
+# ** Note: $finish    : ../sim/testbench_operation1.sv(147)
+#    Time: 10 ns  Iteration: 0  Instance: /testbench_operation1

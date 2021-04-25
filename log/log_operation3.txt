@@ -1,0 +1,49 @@
+Reading C:/questasim_10.0b/tcl/vsim/pref.tcl 
+
+# 10.0b
+
+# vsim -do {vsim -voptargs=+acc=npr; run -all; exit} -c -voptargs=+acc=npr testbench_operation3 
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim
+# //  Version 10.0b win32 May  5 2011
+# //
+# //  Copyright 1991-2011 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.testbench_operation3(fast)
+# Loading work.operation3(fast)
+# vsim -voptargs=+acc=npr 
+# No design specified
+#  run -all 
+# RESET HIGH @                 5000
+# RESET LOW @                35000
+# input_tp=1.000000 <------> result=1.000000 @                85000
+# input_tp=1.000000 <------> result=1.000000 @               125000
+# input_tp=1.000000 <------> result=1.000000 @               165000
+# input_tp=1.000000 <------> result=1.000000 @               205000
+# input_tp=1.000000 <------> result=1.000000 @               245000
+# input_tp=1.000000 <------> result=1.000000 @               285000
+# input_tp=1.000000 <------> result=1.000000 @               325000
+# input_tp=1.000000 <------> result=1.000000 @               365000
+# input_tp=1.000000 <------> result=1.000000 @               405000
+# input_tp=1.000000 <------> result=1.000000 @               445000
+# input_tp=1.000000 <------> result=1.000000 @               485000
+# input_tp=1.000000 <------> result=1.000000 @               525000
+# input_tp=1.000000 <------> result=1.000000 @               565000
+# input_tp=1.000000 <------> result=1.000000 @               605000
+# input_tp=1.000000 <------> result=1.000000 @               645000
+# input_tp=1.000000 <------> result=1.000000 @               685000
+# input_tp=1.000000 <------> result=1.000000 @               725000
+# input_tp=1.000000 <------> result=1.000000 @               765000
+# input_tp=1.000000 <------> result=1.000000 @               805000
+# input_tp=1.000000 <------> result=1.000000 @               845000
+# input_tp=1.000000 <------> result=1.000000 @               885000
+# input_tp=1.000000 <------> result=1.000000 @               925000
+# input_tp=1.000000 <------> result=1.000000 @               965000
+# ** Note: $finish    : ../sim/testbench_operation3.sv(88)
+#    Time: 1 ns  Iteration: 0  Instance: /testbench_operation3
