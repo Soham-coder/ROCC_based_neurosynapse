@@ -61,12 +61,12 @@ inst[14] = xd
 inst[13] = xs1
 inst[12] = xs2
 inst[11:7] = rd
-inst[6:0] = opcode
+inst[6:5] = opcode 
 
 According to format above
 
 
-opcode = 0 (For Neurosynapse accelerator)
+opcode = 0 (For Neurosynapse accelerator, only 2 bits are sent)
 xd = 0 (ROCC core will expect nothing in return, all return values will be stored in local physical register file)
 xs1 = 1 (ROCC core will provide rs1)
 xs2 = 1 (ROCC core will provide rs2)
