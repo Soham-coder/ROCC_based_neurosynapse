@@ -49,8 +49,9 @@ chmod +x run_operation3.sh
 
 
 #### ROCC Instruction format
-![ROCC_instruction_format](../manuals/ROCC_ISA.PNG)
+![ROCC_instruction_format](manuals/ROCC_ISA.PNG)
 
+```md
 So we will have the signal inst[31:0] going to the ROCC accelerator
 
 inst[31:25] = funct7
@@ -77,10 +78,12 @@ funct7 = operation1/operation2/operation3
          operation2 = 7'b0000_010
          operation3 = 7'b0000_011
 
+```
 
 #### ROCC Request Interface
-![ROCC_request_interface](../manuals/ROCC_request_intf.PNG)
+![ROCC_request_interface](manuals/ROCC_request_intf.PNG)
 
+```md
 Supply the following from ROCC_core (TB in our case)
 inst[31:0] = ROCC_instruction
 rs1[63:0]
@@ -95,9 +98,13 @@ is high.
 
 When (valid && ready === 1), complete request will be accepted and ready will be made low until ROCC_accel completes 
 processing present instruction and goes for next one
+```
 
 #### ROCC Response Interface
-![ROCC_reponse_interface](../manuals/ROCC_response_intf.PNG)
+![ROCC_reponse_interface](manuals/ROCC_response_intf.PNG)
 
+
+```md
 Nothing to supply back to the core, write 
 the result [31:0] value to register address specified by rd=inst[11:7]
+```
