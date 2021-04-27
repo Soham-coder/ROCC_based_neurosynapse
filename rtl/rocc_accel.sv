@@ -81,9 +81,12 @@ begin
     ID:
     begin
         ready_reg <= 1;
+        
         if(valid && ready_reg)
-        begin
+        
+        begin//
             ready_reg <= 0;
+            
             {funct7, rs2_reg, rs1_reg, xd, xs1, xs2, rd, opcode} <= inst[31:5];
             rs1_oper <= rs1;
             rs2_oper <= rs2;
@@ -145,10 +148,14 @@ begin
 
             op1_inp_STB <= 1;
 
-            if(op1_inp_STB && !op1_BUSY)
-            op1_inp_STB <= 0;
-            current_state <= EX;
-        end
+            if(op1_inp_STB && !op1_BUSY) 
+            begin//
+                op1_inp_STB <= 0;
+                current_state <= EX;
+            end//
+        
+        end//
+    
     end
 
     EX:
