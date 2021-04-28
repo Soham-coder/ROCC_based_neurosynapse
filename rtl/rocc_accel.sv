@@ -61,6 +61,38 @@ operation1 op1_inst(
 
 
 
+reg [31:0] ReadData1, ReadData2, ReadData3, ReadData4;
+reg [4:0] ReadReg1, ReadReg2, ReadReg3, ReadReg4;
+
+reg [4:0] WriteReg;
+reg [31:0] WriteData;
+reg RegWrite;
+
+RegisterFile 
+#(.WORD_SIZE(32), .NUMBER_OF_REGISTERS(32))
+reg_inst(
+         .ReadData1(ReadData1), 
+         .ReadData2(ReadData2), 
+         .ReadData3(ReadData3),
+         .ReadData4(ReadData4), 
+         
+         .ReadReg1(ReadReg1), 
+         .ReadReg2(ReadReg2), 
+         .ReadReg3(ReadReg3),
+         .ReadReg4(ReadReg4), 
+         
+         
+         
+         .WriteReg(WriteReg), 
+         .WriteData(WriteData), 
+         .RegWrite(RegWrite), 
+         .clk(clk)   
+        );
+
+
+
+
+
 reg [6:0] funct7;
 reg [4:0] rs2_reg;
 reg [4:0] rs1_reg;
@@ -74,7 +106,9 @@ reg[63:0] rs1_oper;
 reg[63:0] rs2_oper;
 
 
-always@(posedge clk)
+reg[31:0] result;
+
+always@(posedge clk)//always
 begin
     case(current_state)
 
@@ -160,12 +194,39 @@ begin
 
     EX:
        begin
-           
+           out_op1_BUSY <= 0;
+           if (op1_out_STB && !out_op1_BUSY)
+           begin//
+                out_op1_BUSY <= 1;
+                result       <= result_op1;
+                state        <= WB;
+           end//
        end 
-
+    
+    WB:
+       begin
+           RegWrite  <= 1;
+           WriteReg  <= rd;
+           WriteData <= result;
+           state     <= ID;
+       end
     endcase
 
+end//always
+
+
+always@(posedge clk)
+if(rst)
+begin
+    ready       <= 0; //op status ready - 0
+    
+    op1_inp_STB <= 0; //no valid input to operation1 module
+    RegWrite    <= 0; //no writing to register file
+
+    state       <= ID;
 end
+
+
 
     
 endmodule : rocc_accel
