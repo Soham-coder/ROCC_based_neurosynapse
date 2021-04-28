@@ -197,18 +197,18 @@ begin
            out_op1_BUSY <= 0;
            if (op1_out_STB && !out_op1_BUSY)
            begin//
-                out_op1_BUSY <= 1;
-                result       <= result_op1;
-                state        <= WB;
+                out_op1_BUSY         <= 1;
+                result               <= result_op1;
+                current_state        <= WB;
            end//
        end 
     
     WB:
        begin
-           RegWrite  <= 1;
-           WriteReg  <= rd;
-           WriteData <= result;
-           state     <= ID;
+           RegWrite          <= 1;
+           WriteReg          <= rd;
+           WriteData         <= result;
+           cuurent_state     <= ID;
        end
     endcase
 
@@ -218,15 +218,12 @@ end//always
 always@(posedge clk)
 if(rst)
 begin
-    ready       <= 0; //op status ready - 0
+    ready               <= 0; //op status ready - 0
     
-    op1_inp_STB <= 0; //no valid input to operation1 module
-    RegWrite    <= 0; //no writing to register file
+    op1_inp_STB         <= 0; //no valid input to operation1 module
+    RegWrite            <= 0; //no writing to register file
 
-    state       <= ID;
+    current_state       <= ID;
 end
 
-
-
-    
 endmodule : rocc_accel

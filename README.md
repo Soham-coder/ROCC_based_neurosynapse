@@ -108,3 +108,12 @@ processing present instruction and goes for next one
 Nothing to supply back to the core, write 
 the result [31:0] value to register address specified by rd=inst[11:7]
 ```
+```md
+Then how to get the value written to local register file if there is no reg_read stage or spec does not allow it?
+
+Approach will be -
+Get it from TB the register value written to by previous operation. 
+-> Store previous "rd" from previous sent inst[31:5]
+-> Tap Register_File[rd] of DUT in TB when operation of rocc_accel completes
+-> Send this value along with others in next inst[31:5] 
+```
