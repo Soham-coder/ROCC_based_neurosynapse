@@ -50,6 +50,7 @@ begin
         if(op2_input_STB && !op2_BUSY)
         begin
             a <= input_tp;
+            op2_BUSY_reg<=1'b1;
             current_state <= state_1;
         end
     end
