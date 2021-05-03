@@ -4,43 +4,43 @@ K3
 cModel Technology
 Z0 dC:\Users\SOHAM\Desktop\ROCC_based_neurosynapse\run_scripts
 T_opt
-Vh1e>SEi<N`JWlITN^[hOK3
-04 20 4 work testbench_operation3 fast 0
-Z1 =1-80ce624f2b7e-60852188-273-24a0
+VXAoLSM[o4;K_gaETKZI@D2
+04 2 4 work tb fast 0
+Z1 =1-80ce624f2b7e-609020af-2f5-c30
 Z2 o-quiet -auto_acc_if_foreign -work work +acc=npr
 Z3 n@_opt
 Z4 OE;O;10.0b;49
 Z5 dC:\Users\SOHAM\Desktop\ROCC_based_neurosynapse\run_scripts
-voperation3
+vadder
 Z6 DXx6 sv_std 3 std 0 22 :CP]PHbGOHGT_H:3KF`8L2
-Z7 I@RQnV_SmcTzXfDdQZM8e42
-Z8 VbIZRdXlm3mGFcG>EBo07Y2
+Z7 IXFAKzcgHDSN>18mBXzAS^0
+Z8 Vd6fQfoEl_4KJfQia>:D9h3
 S1
 R5
-Z9 w1619337381
-Z10 8../rtl/operation3.sv
-Z11 F../rtl/operation3.sv
-L0 2
+Z9 w1619333598
+Z10 8../rtl/adder.sv
+Z11 F../rtl/adder.sv
+L0 1
 Z12 OE;L;10.0b;49
 r1
 31
-Z13 !s108 1619337606.698000
-Z14 !s107 ../sim/testbench_operation3.sv|../rtl/operation3.sv|
-Z15 !s90 -writetoplevels|questa.tops|-timescale|1ps/1fs|-f|run_operation3.f|
+Z13 !s108 1620058285.557000
+Z14 !s107 ../sim/testbench_operation1.sv|../rtl/operation1.sv|../rtl/multiplier.sv|../rtl/adder.sv|
+Z15 !s90 -writetoplevels|questa.tops|-timescale|1ps/1fs|-f|run_operation1.f|
 Z16 o+access+rw -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
 Z17 !s92 +incdir+../rtl/+../sim/ +access+rw -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
-Z18 !s100 8j]b[1o36K@z7nXiH`RBD0
-Z19 !s105 operation3_sv_unit
+Z18 !s100 N=bA[ALf?O=KC@Pi^nf453
+Z19 !s105 adder_sv_unit
 !s85 0
-vtestbench_operation3
+vmultiplier
 R6
-Z20 IZUeYb_lF6ccW`==4lLTD12
-Z21 V=cO[9>^;n8e64dl4n;MHf3
+Z20 IQz`:0EiCLCR>^9Q>WT:2Z2
+Z21 VES3DNeVOY;N>H6hdUQ9Xh1
 S1
 R5
-Z22 w1619337439
-Z23 8../sim/testbench_operation3.sv
-Z24 F../sim/testbench_operation3.sv
+Z22 w1619333528
+Z23 8../rtl/multiplier.sv
+Z24 F../rtl/multiplier.sv
 L0 1
 R12
 r1
@@ -50,6 +50,48 @@ R14
 R15
 R16
 R17
-Z25 !s100 :W]>C?gB[_lKTT_=c6BzU1
-Z26 !s105 testbench_operation3_sv_unit
+Z25 !s100 ]YiXcH:8R^JJP5T6an_?80
+Z26 !s105 multiplier_sv_unit
+!s85 0
+voperation1
+R6
+Z27 I^HZ2WlJFJN;KJbScjfXP>0
+Z28 V:j1N6_l79GW=IcVUTdFiO2
+S1
+R5
+Z29 w1619335033
+Z30 8../rtl/operation1.sv
+Z31 F../rtl/operation1.sv
+L0 3
+R12
+r1
+31
+R13
+R14
+R15
+R16
+R17
+Z32 !s100 [PSIKBAaCej<:HGM=3iMZ0
+Z33 !s105 operation1_sv_unit
+!s85 0
+vtb
+R6
+Z34 IJDM04C2a7ee2ENZeazU042
+Z35 VV@Xn<HnSRM[I5c1?BH]3a3
+S1
+R5
+Z36 w1620058279
+Z37 8../sim/testbench_operation1.sv
+Z38 F../sim/testbench_operation1.sv
+L0 1
+R12
+r1
+31
+R13
+R14
+R15
+R16
+R17
+Z39 !s100 V>?N9VIdooa2Z:Z[J8oaS2
+Z40 !s105 testbench_operation1_sv_unit
 !s85 0

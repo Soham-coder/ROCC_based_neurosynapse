@@ -1,4 +1,4 @@
-module testbench_operation1;
+module tb;
   
   logic clk;
   logic rst;
@@ -11,8 +11,10 @@ module testbench_operation1;
   
   
  
-
-  class rand_real ;
+///////////////////////////////////////////////////
+///////Constraint class sending random data////////
+///////////////////////////////////////////////////  
+class rand_real ;
 
   rand bit[31:0] rand_var1;
   rand bit[31:0] rand_var2;
@@ -29,7 +31,9 @@ module testbench_operation1;
 
   };
   endclass : rand_real
- 
+///////////////////////////////////////////////////
+///////Constraint class sending random data////////
+///////////////////////////////////////////////////  
 
   
   
@@ -51,34 +55,50 @@ module testbench_operation1;
    );
   
   
+  mailbox#(logic[31:0]) input_a_mb  = new(1);
+  mailbox#(logic[31:0]) input_b_mb  = new(1);
+  mailbox#(logic[31:0]) input_c_mb  = new(1);
+  mailbox#(logic[31:0]) input_d_mb  = new(1);
+  mailbox#(logic[31:0]) output_result_mb  = new(1);
+ 
+  event given_inputs;
   
-  logic[31:0] input_a_queue[$];
-  logic[31:0] input_b_queue[$];
-  logic[31:0] input_c_queue[$];
-  logic[31:0] input_d_queue[$];
-  
-  logic[31:0] output_result_queue[$];
+ 
   
   
   task give_inputs();
-    forever begin
-        @(posedge clk iff(op1_BUSY === 1'b0 && rst === 1'b0));
-            rand_real_inst = new();
-            assert (rand_real_inst.randomize());
+  logic [31:0] input_a_reg, input_b_reg, input_c_reg, input_d_reg;
+  @(posedge clk iff(op1_BUSY === 1'b0 && rst === 1'b0));
+  rand_real_inst = new();
+  assert (rand_real_inst.randomize());
             
-            op1_input_STB <= 1'b1;
-      		  input_a <= rand_real_inst.rand_var1;
-              //input_a <= 'h40000000;
-      		  input_b <= rand_real_inst.rand_var2;
-              //input_b <= 'h40000000;
-      		  input_c <= rand_real_inst.rand_var3;
-              //input_c <= 'h40000000;
-      		  input_d <= rand_real_inst.rand_var4;
-              //input_d <= 'h40000000;
-    end
-   endtask:give_inputs
-   
+  op1_input_STB = 1'b1;
+  
+  input_a_reg = rand_real_inst.rand_var1;
+  input_a_mb.put(input_a_reg);
+  input_a = input_a_reg;
+  $display("storing a(hex):%h", input_a_reg);
+  $display("storing a(float):%f", $bitstoshortreal(input_a_reg));
+  input_b_reg = rand_real_inst.rand_var2;
+  input_b_mb.put(input_b_reg);
+  input_b = input_b_reg;
+  $display("storing b(hex):%h", input_b_reg);
+  $display("storing b(float):%f", $bitstoshortreal(input_b_reg));
+  input_c_reg = rand_real_inst.rand_var3;
+  input_c_mb.put(input_c_reg);
+  input_c = input_c_reg;
+  $display("storing c(hex):%h", input_c_reg);
+  $display("storing c(float):%f", $bitstoshortreal(input_c_reg));
+  input_d_reg = rand_real_inst.rand_var4;
+  input_d_mb.put(input_d_reg);
+  input_d = input_d_reg;
+  $display("storing d(hex):%h", input_d_reg);
+  $display("storing d(float):%f", $bitstoshortreal(input_d_reg));
  
+  @(posedge clk iff(op1_BUSY === 1'b0 && rst === 1'b0));
+  -> given_inputs;
+  endtask:give_inputs
+   
   task give_rst();
     @(posedge clk);
     rst <= 1'b1;
@@ -89,61 +109,62 @@ module testbench_operation1;
     output_module_BUSY <= 1'b0;
   endtask:give_rst
         
-  task store_valid_inputs();
-    forever begin
-    @(posedge clk iff(op1_input_STB === 1'b1 && op1_BUSY === 1'b0 && rst === 1'b0));
-        input_a_queue.push_front(input_a);
-        input_b_queue.push_front(input_b);
-        input_c_queue.push_front(input_c);
-        input_d_queue.push_front(input_d);
-    end
-  endtask:store_valid_inputs
+  
         
-  task store_valid_outputs();
-    forever begin
-      @(posedge clk iff(op1_output_STB === 1'b1 && output_module_BUSY === 1'b0 && rst === 1'b0));
-        output_result_queue.push_front(output_result);
-    end
-  endtask: store_valid_outputs
-        
+  
+  logic[31:0] output_result_reg;
   logic[31:0] a, b, c, d, result;
   real real_a, real_b, real_c, real_d, real_result;
   real expected_result;
   
-  task print_result_and_check();
-      forever begin
-      wait(input_a_queue.size()>0 && input_b_queue.size()>0 && input_c_queue.size()>0 && input_d_queue.size()>0 && output_result_queue.size()>0)begin
-        a = input_a_queue.pop_back();
-        b = input_b_queue.pop_back();
-        c = input_c_queue.pop_back();
-        d = input_d_queue.pop_back();
-        result = output_result_queue.pop_back();
-        real_a = $bitstoshortreal(a);
-        real_b = $bitstoshortreal(b);
-        real_c = $bitstoshortreal(c);
-        real_d = $bitstoshortreal(d);
-        real_result = $bitstoshortreal(result);
-        expected_result = ( $bitstoshortreal(a) * $bitstoshortreal(b) ) + ( $bitstoshortreal(c) * $bitstoshortreal(d) );
-        $display("input_a=%f, input_b=%f, input_c=%f, input_d=%f <------> result=%f, expected_result=%f", real_a, real_b, real_c, real_d, real_result, expected_result);
-      end
-      end
-  endtask:print_result_and_check
+  always begin//always checking
+  
+  @(given_inputs);
+  
+  @(posedge clk iff(op1_output_STB === 1'b1 && output_module_BUSY === 1'b0 && rst === 1'b0));
+  output_result_reg = output_result;
+  output_result_mb.put(output_result_reg);
+  $display("storing out(hex):%h", output_result_reg);
+  $display("storing out(float):%f", $bitstoshortreal(output_result_reg));
+  if(input_a_mb.num()===1 && input_b_mb.num()===1 && input_c_mb.num()===1 && input_d_mb.num()===1 && output_result_mb.num()===1)begin//if
+    input_a_mb.get(a);
+    input_b_mb.get(b);
+    input_c_mb.get(c);
+    input_d_mb.get(d);
+    output_result_mb.get(result);
+    real_a = $bitstoshortreal(a);
+    real_b = $bitstoshortreal(b);
+    real_c = $bitstoshortreal(c);
+    real_d = $bitstoshortreal(d);
+    real_result = $bitstoshortreal(result);
+    expected_result = ($bitstoshortreal(a)*$bitstoshortreal(b))+($bitstoshortreal(c)*$bitstoshortreal(d));
+    $display("input_a=%f, input_b=%f, input_c=%f, input_d=%f <------> result=%f, expected_result=%f", real_a, real_b, real_c, real_d, real_result, expected_result);
+  end//if
+  
+  end//always checking
+      
+        
+  
+  
+  
+  
+ 
+
         
   initial begin
+  forever begin 
     fork : START
-      give_rst();
       give_inputs();
-      store_valid_inputs();
-      store_valid_outputs();
-    join_none : START
-    print_result_and_check();
+    join : START
+  end
   end
   
   always #5 clk = ~clk;
   
   initial begin
     clk = 1'b0;
-    #10000;
+    give_rst();
+    #100000;
     $finish;
   end
   
@@ -154,5 +175,5 @@ module testbench_operation1;
   
   
   
-  endmodule: testbench_operation1
+  endmodule:tb
   
