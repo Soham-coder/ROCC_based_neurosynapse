@@ -14,6 +14,7 @@ chmod +x run_operation1.sh
 
 ```diff
 - o/p log "log_operation1.txt" will be created inside "log" directory
+- operation1 does "result = a*b+c*d", where result,a,b,c,d are all 32 bit IEEE floating pt. numbers
 ```
 
 #### Run 2nd operation design + TB
@@ -28,6 +29,7 @@ chmod +x run_operation2.sh
 
 ```diff
 - o/p log "log_operation2.txt" will be created inside "log" directory
+- operation2 does "result = a/b+c/d", where result,a,b,c,d are all 32 bit IEEE floating pt. numbers
 ```
 
 #### Run 3rd operation design + TB
