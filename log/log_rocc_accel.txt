@@ -1,0 +1,34 @@
+Reading C:/questasim_10.0b/tcl/vsim/pref.tcl 
+
+# 10.0b
+
+# vsim -do {vsim -voptargs=+acc=npr; run -all; exit} -c -voptargs=+acc=npr operation2 operation3 TB 
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim
+# //  Version 10.0b win32 May  5 2011
+# //
+# //  Copyright 1991-2011 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.operation2(fast)
+# Loading work.divider(fast)
+# Loading work.adder(fast)
+# Loading work.operation3(fast)
+# Loading work.TB(fast)
+# Loading work.rocc_accel(fast)
+# Loading work.operation1(fast)
+# Loading work.multiplier(fast)
+# Loading work.RegisterFile(fast)
+# vsim -voptargs=+acc=npr 
+# No design specified
+#  run -all 
+# operation ongoing
+# Reg[1] = 41000000
+# Break at ../sim/TB.sv line 44
+# Stopped at ../sim/TB.sv line 44 
+#  exit 

@@ -24,11 +24,14 @@ input valid;
 output ready;
 
 
+reg ready_reg;
+
 typedef enum logic[2:0] 
 {
-  ID = 0,
-  EXE = 1,
-  WB = 2
+  IF = 0,
+  ID = 1,
+  EXE = 2,
+  WB = 3
 }
 state_t;
 
@@ -108,67 +111,27 @@ reg[63:0] rs2_oper;
 
 reg[31:0] result;
 
+
 always@(posedge clk)//always
 begin
     case(current_state)
+      
+    IF:
+      begin
+        ready_reg <= 1;
+        if(valid && ready_reg)begin
+          ready_reg <= 0;
+          {funct7, rs2_reg, rs1_reg, xd, xs1, xs2, rd, opcode} <= inst[31:5];
+           rs1_oper <= rs1;
+           rs2_oper <= rs2;
+           current_state <= ID;
+        end
+      end
+        
 
     ID:
-    begin
-        ready_reg <= 1;
-        
-        if(valid && ready_reg)
-        
-        begin//
-            ready_reg <= 0;
-            
-            {funct7, rs2_reg, rs1_reg, xd, xs1, xs2, rd, opcode} <= inst[31:5];
-            rs1_oper <= rs1;
-            rs2_oper <= rs2;
-            
-            case(opcode)
-                0:
-                begin
-                   // 
-                end
-            endcase
-
-            case(xd)
-                0:
-                begin
-                   // 
-                end
-            endcase
-
-            case(xs1)
-                1:
-                begin
-                   // 
-                end
-            endcase
-
-            case(xs2)
-                1:
-                begin
-                   // 
-                end
-            endcase
-
-            case(rs1_reg)
-                5'b00000:
-                begin
-                   // 
-                end
-            endcase
-
-            case(rs2_reg)
-                5'b00001:
-                begin
-                   // 
-                end
-            endcase
-
-            
-            case(funct7)
+    begin//
+      case(funct7)
                 7'b0000001 : 
                 begin
                     oper1_op1 <= rs1_oper[63:32];
@@ -176,23 +139,20 @@ begin
                     oper3_op1 <= rs2_oper[63:32];
                     oper4_op1 <= rs2_oper[31:0];
                 end
-                //
-                //...
-            endcase 
+      endcase 
 
-            op1_inp_STB <= 1;
-
-            if(op1_inp_STB && !op1_BUSY) 
-            begin//
+      op1_inp_STB <= 1;
+ 
+      if(op1_inp_STB && op1_BUSY_reg) 
+      begin
                 op1_inp_STB <= 0;
-                current_state <= EX;
-            end//
-        
-        end//
-    
-    end
+                current_state <= EXE;
+      end
+    end//
+       
+  
 
-    EX:
+    EXE:
        begin
            out_op1_BUSY <= 0;
            if (op1_out_STB && !out_op1_BUSY)
@@ -208,7 +168,7 @@ begin
            RegWrite          <= 1;
            WriteReg          <= rd;
            WriteData         <= result;
-           cuurent_state     <= ID;
+           current_state     <= IF;
        end
     endcase
 
@@ -218,12 +178,14 @@ end//always
 always@(posedge clk)
 if(rst)
 begin
-    ready               <= 0; //op status ready - 0
+    ready_reg           <= 1; //op status ready - 1
     
     op1_inp_STB         <= 0; //no valid input to operation1 module
     RegWrite            <= 0; //no writing to register file
 
-    current_state       <= ID;
+    current_state       <= IF;
 end
+
+assign ready = ready_reg;
 
 endmodule : rocc_accel

@@ -1,5 +1,3 @@
-
-
 module operation1(
     clk,
     rst,
@@ -95,12 +93,13 @@ assign op1_BUSY = op1_BUSY_reg;
 typedef enum logic[2:0] 
 {
   get_a_b_start_mult = 0,
-  wait_for_mult1_comp = 1,
-  get_c_d_start_mult = 2,
-  wait_for_mult2_comp = 3,
-  start_add = 4,
-  finish = 5,
-  wait_for_add_comp = 6
+  deassert_mult_input_STB1 = 1,
+  wait_for_mult1_comp = 2,
+  get_c_d_start_mult = 3,
+  wait_for_mult2_comp = 4,
+  start_add = 5,
+  finish = 6,
+  wait_for_add_comp = 7
 }
 state_t;
 
@@ -117,20 +116,28 @@ case(current_state)
 get_a_b_start_mult:
   begin
     op1_BUSY_reg <= 0;
-    if(op1_input_STB && !op1_BUSY)
+    if(op1_input_STB && !op1_BUSY_reg)
     begin
     a<= input_a;
     b<= input_b;
     mult_input_STB1 <= 1'b1;
     op1_BUSY_reg <= 1'b1;
+    //$display("debug1");
+    current_state <= deassert_mult_input_STB1;
+    end
+  end
+  
+deassert_mult_input_STB1:
+  begin
     if(mult_input_STB1 && mult_BUSY1)
       begin
+        //$display("debug2");
         mult_input_STB1 <= 1'b0;
         output_BUSY1 <= 1'b0;
         current_state <= wait_for_mult1_comp;
       end
     end
-  end
+ 
   
 wait_for_mult1_comp:
   begin
@@ -215,11 +222,5 @@ end
 
 
 endmodule : operation1
-
-
-
-
-
-
 
 

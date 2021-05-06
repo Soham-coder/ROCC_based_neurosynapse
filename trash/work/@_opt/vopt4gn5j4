@@ -1,0 +1,55 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\SOHAM\Desktop\ROCC_based_neurosynapse\run_scripts
+T_opt
+Z1 VI1z0@2fOz5@9d<]Qg1E[H0
+Z2 04 20 4 work testbench_operation3 fast 0
+Z3 =1-80ce624f2b7e-6094313d-173-2b38
+Z4 o-quiet -auto_acc_if_foreign -work work +acc=npr
+Z5 n@_opt
+Z6 OE;O;10.0b;49
+Z7 dC:\Users\SOHAM\Desktop\ROCC_based_neurosynapse\run_scripts
+voperation3
+Z8 DXx6 sv_std 3 std 0 22 :CP]PHbGOHGT_H:3KF`8L2
+Z9 IQ01]_zS5zkY1o7hD]2SWZ2
+Z10 VbIZRdXlm3mGFcG>EBo07Y2
+S1
+R7
+Z11 w1620324171
+Z12 8../rtl/operation3.sv
+Z13 F../rtl/operation3.sv
+L0 3
+Z14 OE;L;10.0b;49
+r1
+31
+Z15 !s108 1620324667.121000
+Z16 !s107 ../sim/testbench_operation3.sv|../rtl/operation3.sv|
+Z17 !s90 -writetoplevels|questa.tops|-timescale|1ps/1fs|-f|run_operation3.f|
+Z18 o+access+rw -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z19 !s92 +incdir+../rtl/+../sim/ +access+rw -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z20 !s100 gM:^V3GW5;C0n6L_5[@dP3
+Z21 !s105 operation3_sv_unit
+!s85 0
+vtestbench_operation3
+R8
+Z22 IZUeYb_lF6ccW`==4lLTD12
+Z23 V=cO[9>^;n8e64dl4n;MHf3
+S1
+R7
+Z24 w1619337439
+Z25 8../sim/testbench_operation3.sv
+Z26 F../sim/testbench_operation3.sv
+L0 1
+R14
+r1
+31
+R15
+R16
+R17
+R18
+R19
+Z27 !s100 :W]>C?gB[_lKTT_=c6BzU1
+Z28 !s105 testbench_operation3_sv_unit
+!s85 0

@@ -1,3 +1,7 @@
+Reading C:/questasim_10.0b/tcl/vsim/pref.tcl 
+
+# 10.0b
+
 # vsim -do {vsim -voptargs=+acc=npr; run -all; exit} -c -voptargs=+acc=npr testbench_operation3 
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim
