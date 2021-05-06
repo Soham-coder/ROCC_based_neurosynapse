@@ -44,6 +44,18 @@ chmod +x run_operation3.sh
 - o/p log "log_operation3.txt" will be created inside "log" directory
 ```
 
+#### Run ROCC_accel + TB
+```
+cd run_scripts
+chmod +x run_rocc_accel.sh
+./run_rocc_accel.sh
+```
+
+
+```diff
+- o/p log "log_rocc_accel.txt" will be created inside "log" directory
+```
+
 
 </p>
 </details>
