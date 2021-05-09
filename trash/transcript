@@ -1,4 +1,4 @@
-# vsim -do {vsim -voptargs=+acc=npr; run -all; exit} -c -voptargs=+acc=npr testbench_operation3 
+# vsim -do {vsim -voptargs=+acc=npr; run -all; exit} -c -voptargs=+acc=npr operation2 operation3 TB 
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim
 # //  Version 10.0b win32 May  5 2011
@@ -11,31 +11,25 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # Loading sv_std.std
-# Loading work.testbench_operation3(fast)
+# Loading work.operation2(fast)
+# Loading work.divider(fast)
+# Loading work.adder(fast)
 # Loading work.operation3(fast)
+# Loading work.TB(fast)
+# Loading work.rocc_accel(fast)
+# Loading work.operation1(fast)
+# Loading work.multiplier(fast)
+# Loading work.RegisterFile(fast)
 # vsim -voptargs=+acc=npr 
 # No design specified
 #  run -all 
-# RESET HIGH @                 5000
-# RESET LOW @                35000
-# input_tp=1.000000 <------> result=1.000000 @                85000
-# input_tp=1.000000 <------> result=1.000000 @               135000
-# input_tp=1.000000 <------> result=1.000000 @               185000
-# input_tp=1.000000 <------> result=1.000000 @               235000
-# input_tp=1.000000 <------> result=1.000000 @               285000
-# input_tp=1.000000 <------> result=1.000000 @               335000
-# input_tp=1.000000 <------> result=1.000000 @               385000
-# input_tp=1.000000 <------> result=1.000000 @               435000
-# input_tp=1.000000 <------> result=1.000000 @               485000
-# input_tp=1.000000 <------> result=1.000000 @               535000
-# input_tp=1.000000 <------> result=1.000000 @               585000
-# input_tp=1.000000 <------> result=1.000000 @               635000
-# input_tp=1.000000 <------> result=1.000000 @               685000
-# input_tp=1.000000 <------> result=1.000000 @               735000
-# input_tp=1.000000 <------> result=1.000000 @               785000
-# input_tp=1.000000 <------> result=1.000000 @               835000
-# input_tp=1.000000 <------> result=1.000000 @               885000
-# input_tp=1.000000 <------> result=1.000000 @               935000
-# input_tp=1.000000 <------> result=1.000000 @               985000
-# ** Note: $finish    : ../sim/testbench_operation3.sv(88)
-#    Time: 1 ns  Iteration: 0  Instance: /testbench_operation3
+# RESET START @0
+# RESET END @15000
+# operation ongoing
+# Reg[1] = 41000000 (hex), 8.000000 (float)
+# RESET START @515000
+# RESET END @535000
+# operation ongoing
+# Reg[2] = 43000000 (hex), 128.000000 (float)
+# ** Note: $finish    : ../sim/TB.sv(81)
+#    Time: 1045 ps  Iteration: 1  Instance: /TB

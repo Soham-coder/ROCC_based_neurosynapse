@@ -1,0 +1,206 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\SOHAM\Desktop\ROCC_based_neurosynapse\run_scripts
+T_opt
+Z1 Vzd1@j_Fa>]SG[[K=:[H<A3
+Z2 04 10 4 work operation2 fast 0
+Z3 04 10 4 work operation3 fast 0
+Z4 04 2 4 work TB fast 0
+Z5 =1-80ce624f2b7e-609776f5-f5-e60
+Z6 o-quiet -auto_acc_if_foreign -work work +acc=npr
+Z7 n@_opt
+Z8 OE;O;10.0b;49
+Z9 dC:\Users\SOHAM\Desktop\ROCC_based_neurosynapse\run_scripts
+vadder
+Z10 DXx6 sv_std 3 std 0 22 :CP]PHbGOHGT_H:3KF`8L2
+Z11 IXFAKzcgHDSN>18mBXzAS^0
+Z12 Vd6fQfoEl_4KJfQia>:D9h3
+S1
+R9
+Z13 w1620323946
+Z14 8../rtl/adder.sv
+Z15 F../rtl/adder.sv
+L0 1
+Z16 OE;L;10.0b;49
+r1
+31
+Z17 !s108 1620539122.577000
+Z18 !s107 ../sim/TB.sv|../rtl/rocc_accel.sv|../rtl/RegisterFile.sv|../rtl/operation3.sv|../rtl/operation2.sv|../rtl/operation1.sv|../rtl/divider.sv|../rtl/multiplier.sv|../rtl/adder.sv|
+Z19 !s90 -writetoplevels|questa.tops|-timescale|1ps/1fs|-f|run_rocc_accel.f|
+Z20 o+access+rw -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z21 !s92 +incdir+../rtl/+../sim/ +access+rw -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z22 !s100 N=bA[ALf?O=KC@Pi^nf453
+Z23 !s105 adder_sv_unit
+!s85 0
+vdivider
+R10
+Z24 IMboPY=k3B:`6R>KU7Jh^J0
+Z25 VXGChBiTzSEN]O8@dV8IdS2
+S1
+R9
+Z26 w1620323998
+Z27 8../rtl/divider.sv
+Z28 F../rtl/divider.sv
+L0 1
+R16
+r1
+31
+R17
+R18
+R19
+R20
+R21
+Z29 !s100 HGPn7M2j5lRh9@VMmC5BI0
+Z30 !s105 divider_sv_unit
+!s85 0
+vmultiplier
+R10
+Z31 IQz`:0EiCLCR>^9Q>WT:2Z2
+Z32 VES3DNeVOY;N>H6hdUQ9Xh1
+S1
+R9
+Z33 w1620324036
+Z34 8../rtl/multiplier.sv
+Z35 F../rtl/multiplier.sv
+L0 1
+R16
+r1
+31
+R17
+R18
+R19
+R20
+R21
+Z36 !s100 ]YiXcH:8R^JJP5T6an_?80
+Z37 !s105 multiplier_sv_unit
+!s85 0
+voperation1
+R10
+Z38 IcKjC4US10od>=F41??LNS0
+Z39 V:j1N6_l79GW=IcVUTdFiO2
+S1
+R9
+Z40 w1620324083
+Z41 8../rtl/operation1.sv
+Z42 F../rtl/operation1.sv
+L0 1
+R16
+r1
+31
+R17
+R18
+R19
+R20
+R21
+Z43 !s100 PFCHQTzQD[^VjY5bblZOm2
+Z44 !s105 operation1_sv_unit
+!s85 0
+voperation2
+R10
+Z45 I5==5?clQ3U0623hC:?`Em0
+Z46 VgaAhlIcVH8]FX[GJJ@i_93
+S1
+R9
+Z47 w1620324140
+Z48 8../rtl/operation2.sv
+Z49 F../rtl/operation2.sv
+L0 7
+R16
+r1
+31
+R17
+R18
+R19
+R20
+R21
+Z50 !s100 Q16Z`c7bV]mHJREh<O4Rh0
+Z51 !s105 operation2_sv_unit
+!s85 0
+voperation3
+R10
+Z52 IQ01]_zS5zkY1o7hD]2SWZ2
+Z53 VbIZRdXlm3mGFcG>EBo07Y2
+S1
+R9
+Z54 w1620324171
+Z55 8../rtl/operation3.sv
+Z56 F../rtl/operation3.sv
+L0 3
+R16
+r1
+31
+R17
+R18
+R19
+R20
+R21
+Z57 !s100 gM:^V3GW5;C0n6L_5[@dP3
+Z58 !s105 operation3_sv_unit
+!s85 0
+vRegisterFile
+R10
+Z59 I6:V>o3P55S:B0Zj0S0GST0
+Z60 V9zbnZdM69`^VV0D;E6O@d0
+S1
+R9
+Z61 w1620324215
+Z62 8../rtl/RegisterFile.sv
+Z63 F../rtl/RegisterFile.sv
+L0 24
+R16
+r1
+31
+R17
+R18
+R19
+R20
+R21
+Z64 n@register@file
+Z65 !s100 G<:WmUOJ2fMlRJ73o0zFN2
+Z66 !s105 RegisterFile_sv_unit
+!s85 0
+vrocc_accel
+R10
+Z67 I[7fh`5ZL3IYNJl4@K4WKN0
+Z68 V?SGbJ^@EH:IDYGW9OJI5Z1
+S1
+R9
+Z69 w1620323896
+Z70 8../rtl/rocc_accel.sv
+Z71 F../rtl/rocc_accel.sv
+L0 1
+R16
+r1
+31
+R17
+R18
+R19
+R20
+R21
+Z72 !s100 X5oW`01MUf:NiUCGS_2TO0
+Z73 !s105 rocc_accel_sv_unit
+!s85 0
+vTB
+R10
+Z74 I;kTV5U1Wi?j9hBcfWGa5G2
+Z75 Vc<=32996OT2f`M7E_UhYX1
+S1
+R9
+Z76 w1620539119
+Z77 8../sim/TB.sv
+Z78 F../sim/TB.sv
+L0 1
+R16
+r1
+31
+R17
+R18
+R19
+R20
+R21
+n@t@b
+Z79 !s100 hfT7zC<?QlFdO8BI7m1WJ3
+Z80 !s105 TB_sv_unit
+!s85 0
