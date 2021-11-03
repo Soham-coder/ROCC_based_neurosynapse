@@ -1,4 +1,4 @@
-# vsim -do {vsim -voptargs=+acc=npr; run -all; exit} -c -voptargs=+acc=npr operation2 operation3 TB 
+# vsim -do {vsim -voptargs=+acc=npr; run -all; exit} -c -voptargs=+acc=npr tb 
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim
 # //  Version 10.0b win32 May  5 2011
@@ -11,25 +11,1265 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # Loading sv_std.std
-# Loading work.operation2(fast)
-# Loading work.divider(fast)
-# Loading work.adder(fast)
-# Loading work.operation3(fast)
-# Loading work.TB(fast)
-# Loading work.rocc_accel(fast)
+# Loading work.tb(fast)
 # Loading work.operation1(fast)
 # Loading work.multiplier(fast)
-# Loading work.RegisterFile(fast)
+# Loading work.adder(fast)
 # vsim -voptargs=+acc=npr 
 # No design specified
 #  run -all 
-# RESET START @0
-# RESET END @15000
-# operation ongoing
-# Reg[1] = 41000000 (hex), 8.000000 (float)
-# RESET START @515000
-# RESET END @535000
-# operation ongoing
-# Reg[2] = 43000000 (hex), 128.000000 (float)
-# ** Note: $finish    : ../sim/TB.sv(81)
-#    Time: 1045 ps  Iteration: 1  Instance: /TB
+# RESET HIGH @                 5000
+# RESET LOW @                35000
+# storing a(hex):3f9ee155
+# storing a(float):1.241252
+# storing b(hex):3fc556fd
+# storing b(float):1.541717
+# storing c(hex):3ff13b77
+# storing c(float):1.884627
+# storing d(hex):3fd82023
+# storing d(float):1.688481
+# storing out(hex):40a310ec
+# storing out(float):5.095816
+# input_a=1.241252, input_b=1.541717, input_c=1.884627, input_d=1.688481 <------> result=5.095816, expected_result=5.095816
+# storing a(hex):3fd69b94
+# storing a(float):1.676623
+# storing b(hex):3fd79812
+# storing b(float):1.684328
+# storing c(hex):3fd2a63b
+# storing c(float):1.645698
+# storing d(hex):3fc4576f
+# storing d(float):1.533918
+# storing out(hex):40ab25ae
+# storing out(float):5.348350
+# input_a=1.676623, input_b=1.684328, input_c=1.645698, input_d=1.533918 <------> result=5.348350, expected_result=5.348350
+# storing a(hex):3f9e430a
+# storing a(float):1.236421
+# storing b(hex):3fa4a34a
+# storing b(float):1.286233
+# storing c(hex):3fec4bed
+# storing c(float):1.846067
+# storing d(hex):3fae63e7
+# storing d(float):1.362424
+# storing out(hex):40835fdc
+# storing out(float):4.105452
+# input_a=1.236421, input_b=1.286233, input_c=1.846067, input_d=1.362424 <------> result=4.105452, expected_result=4.105451
+# storing a(hex):3ffed27d
+# storing a(float):1.990799
+# storing b(hex):3f978e1d
+# storing b(float):1.184024
+# storing c(hex):3ff4634a
+# storing c(float):1.909280
+# storing d(hex):3fed975e
+# storing d(float):1.856182
+# storing out(hex):40bcd604
+# storing out(float):5.901125
+# input_a=1.990799, input_b=1.184024, input_c=1.909280, input_d=1.856182 <------> result=5.901125, expected_result=5.901125
+# storing a(hex):3fb3c2f1
+# storing a(float):1.404387
+# storing b(hex):3fafe047
+# storing b(float):1.374032
+# storing c(hex):3fa92d48
+# storing c(float):1.321694
+# storing d(hex):3fabb258
+# storing d(float):1.341380
+# storing out(hex):406cf6da
+# storing out(float):3.702567
+# input_a=1.404387, input_b=1.374032, input_c=1.321694, input_d=1.341380 <------> result=3.702567, expected_result=3.702567
+# storing a(hex):3ff41f58
+# storing a(float):1.907207
+# storing b(hex):3fadbde5
+# storing b(float):1.357358
+# storing c(hex):3ff236a4
+# storing c(float):1.892292
+# storing d(hex):3fabace4
+# storing d(float):1.341214
+# storing out(hex):40a40e2c
+# storing out(float):5.126730
+# input_a=1.907207, input_b=1.357358, input_c=1.892292, input_d=1.341214 <------> result=5.126730, expected_result=5.126730
+# storing a(hex):3fa9b947
+# storing a(float):1.325967
+# storing b(hex):3fbcae37
+# storing b(float):1.474067
+# storing c(hex):3fabb317
+# storing c(float):1.341403
+# storing d(hex):3fa47a72
+# storing d(float):1.284987
+# storing out(hex):406b686b
+# storing out(float):3.678248
+# input_a=1.325967, input_b=1.474067, input_c=1.341403, input_d=1.284987 <------> result=3.678248, expected_result=3.678248
+# storing a(hex):3f8c8edd
+# storing a(float):1.098110
+# storing b(hex):3fe3e768
+# storing b(float):1.780499
+# storing c(hex):3faa6306
+# storing c(float):1.331147
+# storing d(hex):3fed32f6
+# storing d(float):1.853118
+# storing out(hex):408d80aa
+# storing out(float):4.421956
+# input_a=1.098110, input_b=1.780499, input_c=1.331147, input_d=1.853118 <------> result=4.421956, expected_result=4.421956
+# storing a(hex):3fba1406
+# storing a(float):1.453736
+# storing b(hex):3f8a0715
+# storing b(float):1.078341
+# storing c(hex):3fa39b9d
+# storing c(float):1.278186
+# storing d(hex):3f907f44
+# storing d(float):1.128884
+# storing out(hex):4040accf
+# storing out(float):3.010547
+# input_a=1.453736, input_b=1.078341, input_c=1.278186, input_d=1.128884 <------> result=3.010547, expected_result=3.010547
+# storing a(hex):3fa8955d
+# storing a(float):1.317058
+# storing b(hex):3f9e7373
+# storing b(float):1.237898
+# storing c(hex):3fa2d922
+# storing c(float):1.272251
+# storing d(hex):3ff5b095
+# storing d(float):1.919451
+# storing out(hex):4082512c
+# storing out(float):4.072409
+# input_a=1.317058, input_b=1.237898, input_c=1.272251, input_d=1.919451 <------> result=4.072409, expected_result=4.072409
+# storing a(hex):3fd3e967
+# storing a(float):1.655560
+# storing b(hex):3fdda816
+# storing b(float):1.731692
+# storing c(hex):3ff9874b
+# storing c(float):1.949441
+# storing d(hex):3fc9136b
+# storing d(float):1.570905
+# storing out(hex):40bdbce4
+# storing out(float):5.929308
+# input_a=1.655560, input_b=1.731692, input_c=1.949441, input_d=1.570905 <------> result=5.929308, expected_result=5.929308
+# storing a(hex):3fb05609
+# storing a(float):1.377626
+# storing b(hex):3fbd7a28
+# storing b(float):1.480290
+# storing c(hex):3fadef57
+# storing c(float):1.358867
+# storing d(hex):3faa929f
+# storing d(float):1.332600
+# storing out(hex):40766838
+# storing out(float):3.850111
+# input_a=1.377626, input_b=1.480290, input_c=1.358867, input_d=1.332600 <------> result=3.850111, expected_result=3.850111
+# storing a(hex):3f9338b9
+# storing a(float):1.150169
+# storing b(hex):3fb01316
+# storing b(float):1.375582
+# storing c(hex):3f9cf60b
+# storing c(float):1.226259
+# storing d(hex):3fad9d3d
+# storing d(float):1.356361
+# storing out(hex):404fb4a6
+# storing out(float):3.245401
+# input_a=1.150169, input_b=1.375582, input_c=1.226259, input_d=1.356361 <------> result=3.245401, expected_result=3.245401
+# storing a(hex):3fa2b4c8
+# storing a(float):1.271142
+# storing b(hex):3fab37f1
+# storing b(float):1.337645
+# storing c(hex):3fa6c0ce
+# storing c(float):1.302759
+# storing d(hex):3fbf9691
+# storing d(float):1.496782
+# storing out(hex):40699e3c
+# storing out(float):3.650283
+# input_a=1.271142, input_b=1.337645, input_c=1.302759, input_d=1.496782 <------> result=3.650283, expected_result=3.650283
+# storing a(hex):3f9b0b46
+# storing a(float):1.211282
+# storing b(hex):3fab1790
+# storing b(float):1.336657
+# storing c(hex):3fb13b86
+# storing c(float):1.384629
+# storing d(hex):3fb1550b
+# storing d(float):1.385408
+# storing out(hex):406263d5
+# storing out(float):3.537343
+# input_a=1.211282, input_b=1.336657, input_c=1.384629, input_d=1.385408 <------> result=3.537343, expected_result=3.537343
+# storing a(hex):3fe323f0
+# storing a(float):1.774534
+# storing b(hex):3fe7ce15
+# storing b(float):1.810977
+# storing c(hex):3feebb21
+# storing c(float):1.865086
+# storing d(hex):3fe1b578
+# storing d(float):1.763350
+# storing out(hex):40d013fc
+# storing out(float):6.502439
+# input_a=1.774534, input_b=1.810977, input_c=1.865086, input_d=1.763350 <------> result=6.502439, expected_result=6.502440
+# storing a(hex):3f9bd3ca
+# storing a(float):1.217401
+# storing b(hex):3fdf25c3
+# storing b(float):1.743340
+# storing c(hex):3f95ea68
+# storing c(float):1.171216
+# storing d(hex):3fcc2f4f
+# storing d(float):1.595194
+# storing out(hex):407f66f8
+# storing out(float):3.990660
+# input_a=1.217401, input_b=1.743340, input_c=1.171216, input_d=1.595194 <------> result=3.990660, expected_result=3.990660
+# storing a(hex):3fb5e9e3
+# storing a(float):1.421200
+# storing b(hex):3fc1db37
+# storing b(float):1.514502
+# storing c(hex):3ff58763
+# storing c(float):1.918194
+# storing d(hex):3fd15f40
+# storing d(float):1.635719
+# storing out(hex):40a947fe
+# storing out(float):5.290038
+# input_a=1.421200, input_b=1.514502, input_c=1.918194, input_d=1.635719 <------> result=5.290038, expected_result=5.290038
+# storing a(hex):3fac7932
+# storing a(float):1.347449
+# storing b(hex):3fa86f14
+# storing b(float):1.315890
+# storing c(hex):3fa80496
+# storing c(float):1.312640
+# storing d(hex):3fa982e5
+# storing d(float):1.324307
+# storing out(hex):4060bb4e
+# storing out(float):3.511432
+# input_a=1.347449, input_b=1.315890, input_c=1.312640, input_d=1.324307 <------> result=3.511432, expected_result=3.511432
+# storing a(hex):3fcfac4a
+# storing a(float):1.622445
+# storing b(hex):3fd751aa
+# storing b(float):1.682180
+# storing c(hex):3fed881c
+# storing c(float):1.855716
+# storing d(hex):3f80454d
+# storing d(float):1.002115
+# storing out(hex):4092d826
+# storing out(float):4.588885
+# input_a=1.622445, input_b=1.682180, input_c=1.855716, input_d=1.002115 <------> result=4.588885, expected_result=4.588885
+# storing a(hex):3ff87a33
+# storing a(float):1.941229
+# storing b(hex):3fdc227f
+# storing b(float):1.719803
+# storing c(hex):3faf6b34
+# storing c(float):1.370459
+# storing d(hex):3fd61b64
+# storing d(float):1.672711
+# storing out(hex):40b43070
+# storing out(float):5.630913
+# input_a=1.941229, input_b=1.719803, input_c=1.370459, input_d=1.672711 <------> result=5.630913, expected_result=5.630913
+# storing a(hex):3f9671d8
+# storing a(float):1.175349
+# storing b(hex):3fd00da2
+# storing b(float):1.625416
+# storing c(hex):3f9815b7
+# storing c(float):1.188163
+# storing d(hex):3fd4c2d5
+# storing d(float):1.662196
+# storing out(hex):4078aa3d
+# storing out(float):3.885391
+# input_a=1.175349, input_b=1.625416, input_c=1.188163, input_d=1.662196 <------> result=3.885391, expected_result=3.885391
+# storing a(hex):3fc9678a
+# storing a(float):1.573472
+# storing b(hex):3fbb5aff
+# storing b(float):1.463714
+# storing c(hex):3fa7650e
+# storing c(float):1.307771
+# storing d(hex):3fb22a36
+# storing d(float):1.391913
+# storing out(hex):4083f30b
+# storing out(float):4.123418
+# input_a=1.573472, input_b=1.463714, input_c=1.307771, input_d=1.391913 <------> result=4.123418, expected_result=4.123418
+# storing a(hex):3ff31d91
+# storing a(float):1.899340
+# storing b(hex):3fcbf47f
+# storing b(float):1.593399
+# storing c(hex):3ff5300e
+# storing c(float):1.915529
+# storing d(hex):3ffdcea0
+# storing d(float):1.982868
+# storing out(hex):40da6384
+# storing out(float):6.824648
+# input_a=1.899340, input_b=1.593399, input_c=1.915529, input_d=1.982868 <------> result=6.824648, expected_result=6.824648
+# storing a(hex):3f80e2eb
+# storing a(float):1.006925
+# storing b(hex):3f9beb64
+# storing b(float):1.218121
+# storing c(hex):3f8c2840
+# storing c(float):1.094978
+# storing d(hex):3f8df51c
+# storing d(float):1.109043
+# storing out(hex):401c3844
+# storing out(float):2.440934
+# input_a=1.006925, input_b=1.218121, input_c=1.094978, input_d=1.109043 <------> result=2.440934, expected_result=2.440934
+# storing a(hex):3fe9082e
+# storing a(float):1.820562
+# storing b(hex):3fafca4a
+# storing b(float):1.373361
+# storing c(hex):3ff4c399
+# storing c(float):1.912219
+# storing d(hex):3fa4b2f9
+# storing d(float):1.286712
+# storing out(hex):409ebe94
+# storing out(float):4.960764
+# input_a=1.820562, input_b=1.373361, input_c=1.912219, input_d=1.286712 <------> result=4.960764, expected_result=4.960764
+# storing a(hex):3fc86874
+# storing a(float):1.565688
+# storing b(hex):3f931643
+# storing b(float):1.149117
+# storing c(hex):3fb61994
+# storing c(float):1.422656
+# storing d(hex):3f92e4e6
+# storing d(float):1.147610
+# storing out(hex):405ba2d1
+# storing out(float):3.431813
+# input_a=1.565688, input_b=1.149117, input_c=1.422656, input_d=1.147610 <------> result=3.431813, expected_result=3.431812
+# storing a(hex):3fbfa45b
+# storing a(float):1.497203
+# storing b(hex):3fa54406
+# storing b(float):1.291138
+# storing c(hex):3fa5c69a
+# storing c(float):1.295123
+# storing d(hex):3fbf77a6
+# storing d(float):1.495839
+# storing out(hex):4077b482
+# storing out(float):3.870392
+# input_a=1.497203, input_b=1.291138, input_c=1.295123, input_d=1.495839 <------> result=3.870392, expected_result=3.870392
+# storing a(hex):3fd0a651
+# storing a(float):1.630076
+# storing b(hex):3fd23065
+# storing b(float):1.642102
+# storing c(hex):3fc9de2c
+# storing c(float):1.577093
+# storing d(hex):3fac4585
+# storing d(float):1.345872
+# storing out(hex):409993fc
+# storing out(float):4.799314
+# input_a=1.630076, input_b=1.642102, input_c=1.577093, input_d=1.345872 <------> result=4.799314, expected_result=4.799314
+# storing a(hex):3fd6cf2d
+# storing a(float):1.678198
+# storing b(hex):3fac1cfd
+# storing b(float):1.344635
+# storing c(hex):3fe11ab5
+# storing c(float):1.758628
+# storing d(hex):3fdfb360
+# storing d(float):1.747662
+# storing out(hex):40aa8fc2
+# storing out(float):5.330049
+# input_a=1.678198, input_b=1.344635, input_c=1.758628, input_d=1.747662 <------> result=5.330049, expected_result=5.330048
+# storing a(hex):3fcb4b46
+# storing a(float):1.588235
+# storing b(hex):3f9c6959
+# storing b(float):1.221965
+# storing c(hex):3fcebfaf
+# storing c(float):1.615225
+# storing d(hex):3f896c98
+# storing d(float):1.073627
+# storing out(hex):406b31d0
+# storing out(float):3.674915
+# input_a=1.588235, input_b=1.221965, input_c=1.615225, input_d=1.073627 <------> result=3.674915, expected_result=3.674915
+# storing a(hex):3fb7a294
+# storing a(float):1.434649
+# storing b(hex):3f8de1fd
+# storing b(float):1.108459
+# storing c(hex):3fbb4c7b
+# storing c(float):1.463271
+# storing d(hex):3f872216
+# storing d(float):1.055728
+# storing out(hex):4048a4ec
+# storing out(float):3.135066
+# input_a=1.434649, input_b=1.108459, input_c=1.463271, input_d=1.055728 <------> result=3.135066, expected_result=3.135066
+# storing a(hex):3fb1a423
+# storing a(float):1.387822
+# storing b(hex):3ff5b68c
+# storing b(float):1.919633
+# storing c(hex):3faa6638
+# storing c(float):1.331244
+# storing d(hex):3fd83374
+# storing d(float):1.689070
+# storing out(hex):409d34a0
+# storing out(float):4.912674
+# input_a=1.387822, input_b=1.919633, input_c=1.331244, input_d=1.689070 <------> result=4.912674, expected_result=4.912674
+# storing a(hex):3f87e35b
+# storing a(float):1.061626
+# storing b(hex):3f8357d1
+# storing b(float):1.026117
+# storing c(hex):3f94e10e
+# storing c(float):1.163118
+# storing d(hex):3f9e24e8
+# storing d(float):1.235501
+# storing out(hex):4021b052
+# storing out(float):2.526387
+# input_a=1.061626, input_b=1.026117, input_c=1.163118, input_d=1.235501 <------> result=2.526387, expected_result=2.526387
+# storing a(hex):3fdd29e0
+# storing a(float):1.727840
+# storing b(hex):3fd4ef41
+# storing b(float):1.663551
+# storing c(hex):3fda0a4f
+# storing c(float):1.703440
+# storing d(hex):3fdee7ba
+# storing d(float):1.741447
+# storing out(hex):40bae7d7
+# storing out(float):5.840801
+# input_a=1.727840, input_b=1.663551, input_c=1.703440, input_d=1.741447 <------> result=5.840801, expected_result=5.840801
+# storing a(hex):3ff5ad20
+# storing a(float):1.919346
+# storing b(hex):3febd487
+# storing b(float):1.842423
+# storing c(hex):3ffa85b6
+# storing c(float):1.957206
+# storing d(hex):3feb8af4
+# storing d(float):1.840178
+# storing out(hex):40e4694d
+# storing out(float):7.137854
+# input_a=1.919346, input_b=1.842423, input_c=1.957206, input_d=1.840178 <------> result=7.137854, expected_result=7.137854
+# storing a(hex):3fed33d8
+# storing a(float):1.853145
+# storing b(hex):3fdc735c
+# storing b(float):1.722270
+# storing c(hex):3fcb5f43
+# storing c(float):1.588845
+# storing d(hex):3fd036eb
+# storing d(float):1.626676
+# storing out(hex):40b8d63c
+# storing out(float):5.776152
+# input_a=1.853145, input_b=1.722270, input_c=1.588845, input_d=1.626676 <------> result=5.776152, expected_result=5.776152
+# storing a(hex):3f8cdcbe
+# storing a(float):1.100487
+# storing b(hex):3fd2f7a1
+# storing b(float):1.648182
+# storing c(hex):3f96dd0f
+# storing c(float):1.178621
+# storing d(hex):3fd25804
+# storing d(float):1.643311
+# storing out(hex):40700a8a
+# storing out(float):3.750643
+# input_a=1.100487, input_b=1.648182, input_c=1.178621, input_d=1.643311 <------> result=3.750643, expected_result=3.750643
+# storing a(hex):3fbf9145
+# storing a(float):1.496621
+# storing b(hex):3f8f1741
+# storing b(float):1.117897
+# storing c(hex):3fd9883f
+# storing c(float):1.699470
+# storing d(hex):3fb5b78a
+# storing d(float):1.419664
+# storing out(hex):4082be6b
+# storing out(float):4.085744
+# input_a=1.496621, input_b=1.117897, input_c=1.699470, input_d=1.419664 <------> result=4.085744, expected_result=4.085744
+# storing a(hex):3f8a5fb2
+# storing a(float):1.081045
+# storing b(hex):3fb8e09d
+# storing b(float):1.444355
+# storing c(hex):3f882878
+# storing c(float):1.063735
+# storing d(hex):3f842163
+# storing d(float):1.032269
+# storing out(hex):402a34d0
+# storing out(float):2.659473
+# input_a=1.081045, input_b=1.444355, input_c=1.063735, input_d=1.032269 <------> result=2.659473, expected_result=2.659473
+# storing a(hex):3fadc9a3
+# storing a(float):1.357716
+# storing b(hex):3f95f811
+# storing b(float):1.171633
+# storing c(hex):3fa7250c
+# storing c(float):1.305818
+# storing d(hex):3fc3d2b0
+# storing d(float):1.529867
+# storing out(hex):4065a98a
+# storing out(float):3.588473
+# input_a=1.357716, input_b=1.171633, input_c=1.305818, input_d=1.529867 <------> result=3.588473, expected_result=3.588473
+# storing a(hex):3fc68e5c
+# storing a(float):1.551219
+# storing b(hex):3f994998
+# storing b(float):1.197558
+# storing c(hex):3fd62abc
+# storing c(float):1.673179
+# storing d(hex):3fee1548
+# storing d(float):1.860024
+# storing out(hex):409f08d9
+# storing out(float):4.969830
+# input_a=1.551219, input_b=1.197558, input_c=1.673179, input_d=1.860024 <------> result=4.969830, expected_result=4.969830
+# storing a(hex):3fa81a6a
+# storing a(float):1.313306
+# storing b(hex):3fa31868
+# storing b(float):1.274182
+# storing c(hex):3fab0442
+# storing c(float):1.336067
+# storing d(hex):3fb95571
+# storing d(float):1.447920
+# storing out(hex):4066e800
+# storing out(float):3.607910
+# input_a=1.313306, input_b=1.274182, input_c=1.336067, input_d=1.447920 <------> result=3.607910, expected_result=3.607910
+# storing a(hex):3fd39590
+# storing a(float):1.653002
+# storing b(hex):3fd56984
+# storing b(float):1.667283
+# storing c(hex):3fd1226f
+# storing c(float):1.633863
+# storing d(hex):3f853585
+# storing d(float):1.040696
+# storing out(hex):408e9aa1
+# storing out(float):4.456376
+# input_a=1.653002, input_b=1.667283, input_c=1.633863, input_d=1.040696 <------> result=4.456376, expected_result=4.456376
+# storing a(hex):3f844ba2
+# storing a(float):1.033558
+# storing b(hex):3fb0da86
+# storing b(float):1.381669
+# storing c(hex):3f8c6209
+# storing c(float):1.096742
+# storing d(hex):3fd63da7
+# storing d(float):1.673756
+# storing out(hex):4050e0b0
+# storing out(float):3.263714
+# input_a=1.033558, input_b=1.381669, input_c=1.096742, input_d=1.673756 <------> result=3.263714, expected_result=3.263714
+# storing a(hex):3fc2dfbe
+# storing a(float):1.522453
+# storing b(hex):3ffb29a3
+# storing b(float):1.962208
+# storing c(hex):3fcb1085
+# storing c(float):1.586442
+# storing d(hex):3facf175
+# storing d(float):1.351119
+# storing out(hex):40a42fd9
+# storing out(float):5.130841
+# input_a=1.522453, input_b=1.962208, input_c=1.586442, input_d=1.351119 <------> result=5.130841, expected_result=5.130841
+# storing a(hex):3f85eecd
+# storing a(float):1.046350
+# storing b(hex):3ffde5c8
+# storing b(float):1.983575
+# storing c(hex):3fe02622
+# storing c(float):1.751164
+# storing d(hex):3f8dd0c3
+# storing d(float):1.107933
+# storing out(hex):40808081
+# storing out(float):4.015687
+# input_a=1.046350, input_b=1.983575, input_c=1.751164, input_d=1.107933 <------> result=4.015687, expected_result=4.015687
+# storing a(hex):3fd03e97
+# storing a(float):1.626910
+# storing b(hex):3fdfe854
+# storing b(float):1.749278
+# storing c(hex):3fd66c9b
+# storing c(float):1.675189
+# storing d(hex):3f833843
+# storing d(float):1.025154
+# storing out(hex):4092061b
+# storing out(float):4.563245
+# input_a=1.626910, input_b=1.749278, input_c=1.675189, input_d=1.025154 <------> result=4.563245, expected_result=4.563245
+# storing a(hex):3fd44771
+# storing a(float):1.658430
+# storing b(hex):3fd99c3f
+# storing b(float):1.700081
+# storing c(hex):3fd5ee9d
+# storing c(float):1.671344
+# storing d(hex):3fd30de5
+# storing d(float):1.648862
+# storing out(hex):40b268b4
+# storing out(float):5.575281
+# input_a=1.658430, input_b=1.700081, input_c=1.671344, input_d=1.648862 <------> result=5.575281, expected_result=5.575281
+# storing a(hex):3fd6f109
+# storing a(float):1.679231
+# storing b(hex):3ff4cba5
+# storing b(float):1.912465
+# storing c(hex):3faf57cb
+# storing c(float):1.369867
+# storing d(hex):3ffafc37
+# storing d(float):1.960822
+# storing out(hex):40bcb89a
+# storing out(float):5.897534
+# input_a=1.679231, input_b=1.912465, input_c=1.369867, input_d=1.960822 <------> result=5.897534, expected_result=5.897535
+# storing a(hex):3fab1f31
+# storing a(float):1.336889
+# storing b(hex):3f8b3d4a
+# storing b(float):1.087808
+# storing c(hex):3f9d99db
+# storing c(float):1.231258
+# storing d(hex):3f813afd
+# storing d(float):1.009613
+# storing out(hex):402ca1c0
+# storing out(float):2.697372
+# input_a=1.336889, input_b=1.087808, input_c=1.231258, input_d=1.009613 <------> result=2.697372, expected_result=2.697372
+# storing a(hex):3fdc1af7
+# storing a(float):1.719573
+# storing b(hex):3f88db15
+# storing b(float):1.069186
+# storing c(hex):3fde9acc
+# storing c(float):1.739099
+# storing d(hex):3fbe4c47
+# storing d(float):1.486703
+# storing out(hex):408d91f4
+# storing out(float):4.424067
+# input_a=1.719573, input_b=1.069186, input_c=1.739099, input_d=1.486703 <------> result=4.424067, expected_result=4.424066
+# storing a(hex):3fe9d2f8
+# storing a(float):1.826751
+# storing b(hex):3fa776ce
+# storing b(float):1.308313
+# storing c(hex):3fa0c32b
+# storing c(float):1.255956
+# storing d(hex):3fdd4f23
+# storing d(float):1.728978
+# storing out(hex):4091f7a8
+# storing out(float):4.561481
+# input_a=1.826751, input_b=1.308313, input_c=1.255956, input_d=1.728978 <------> result=4.561481, expected_result=4.561482
+# storing a(hex):3fa8d044
+# storing a(float):1.318856
+# storing b(hex):3fb9cf12
+# storing b(float):1.451632
+# storing c(hex):3fa10c4a
+# storing c(float):1.258188
+# storing d(hex):3fa4e19f
+# storing d(float):1.288135
+# storing out(hex):406240dc
+# storing out(float):3.535209
+# input_a=1.318856, input_b=1.451632, input_c=1.258188, input_d=1.288135 <------> result=3.535209, expected_result=3.535209
+# storing a(hex):3ff91621
+# storing a(float):1.945988
+# storing b(hex):3ffc5176
+# storing b(float):1.971236
+# storing c(hex):3ff35494
+# storing c(float):1.901019
+# storing d(hex):3ff9f735
+# storing d(float):1.952857
+# storing out(hex):40f18ca4
+# storing out(float):7.548418
+# input_a=1.945988, input_b=1.971236, input_c=1.901019, input_d=1.952857 <------> result=7.548418, expected_result=7.548418
+# storing a(hex):3fa01bf4
+# storing a(float):1.250853
+# storing b(hex):3fb8ca64
+# storing b(float):1.443676
+# storing c(hex):3fbff416
+# storing c(float):1.499636
+# storing d(hex):3fb0fda7
+# storing d(float):1.382741
+# storing out(hex):407848ad
+# storing out(float):3.879436
+# input_a=1.250853, input_b=1.443676, input_c=1.499636, input_d=1.382741 <------> result=3.879436, expected_result=3.879436
+# storing a(hex):3fa1f228
+# storing a(float):1.265203
+# storing b(hex):3fc82789
+# storing b(float):1.563707
+# storing c(hex):3fb52e93
+# storing c(float):1.415484
+# storing d(hex):3fce85e2
+# storing d(float):1.613461
+# storing out(hex):40886436
+# storing out(float):4.262233
+# input_a=1.265203, input_b=1.563707, input_c=1.415484, input_d=1.613461 <------> result=4.262233, expected_result=4.262233
+# storing a(hex):3fb378b1
+# storing a(float):1.402121
+# storing b(hex):3fdbecd1
+# storing b(float):1.718165
+# storing c(hex):3fb88acd
+# storing c(float):1.441736
+# storing d(hex):3fc20c8e
+# storing d(float):1.516008
+# storing out(hex):40930840
+# storing out(float):4.594757
+# input_a=1.402121, input_b=1.718165, input_c=1.441736, input_d=1.516008 <------> result=4.594757, expected_result=4.594757
+# storing a(hex):3fa28a0f
+# storing a(float):1.269838
+# storing b(hex):3fb2b3ab
+# storing b(float):1.396108
+# storing c(hex):3fa21f56
+# storing c(float):1.266581
+# storing d(hex):3fca44ad
+# storing d(float):1.580221
+# storing out(hex):40718e4a
+# storing out(float):3.774310
+# input_a=1.269838, input_b=1.396108, input_c=1.266581, input_d=1.580221 <------> result=3.774310, expected_result=3.774309
+# storing a(hex):3fd2f6cc
+# storing a(float):1.648157
+# storing b(hex):3fa7bd1a
+# storing b(float):1.310458
+# storing c(hex):3fd43ec8
+# storing c(float):1.658166
+# storing d(hex):3f871839
+# storing d(float):1.055427
+# storing out(hex):407a3c06
+# storing out(float):3.909914
+# input_a=1.648157, input_b=1.310458, input_c=1.658166, input_d=1.055427 <------> result=3.909914, expected_result=3.909913
+# storing a(hex):3fdf2cf8
+# storing a(float):1.743560
+# storing b(hex):3f9e551e
+# storing b(float):1.236973
+# storing c(hex):3fc9d2e8
+# storing c(float):1.576749
+# storing d(hex):3fcc6967
+# storing d(float):1.596967
+# storing out(hex):40959790
+# storing out(float):4.674751
+# input_a=1.743560, input_b=1.236973, input_c=1.576749, input_d=1.596967 <------> result=4.674751, expected_result=4.674751
+# storing a(hex):3fa0c811
+# storing a(float):1.256106
+# storing b(hex):3fba70e6
+# storing b(float):1.456570
+# storing c(hex):3fa06ac0
+# storing c(float):1.253258
+# storing d(hex):3fbfd706
+# storing d(float):1.498749
+# storing out(hex):406d4ea7
+# storing out(float):3.707926
+# input_a=1.256106, input_b=1.456570, input_c=1.253258, input_d=1.498749 <------> result=3.707926, expected_result=3.707926
+# storing a(hex):3fad17d9
+# storing a(float):1.352290
+# storing b(hex):3fa36c10
+# storing b(float):1.276735
+# storing c(hex):3fabe073
+# storing c(float):1.342787
+# storing d(hex):3fa51e68
+# storing d(float):1.289990
+# storing out(hex):405d5b54
+# storing out(float):3.458699
+# input_a=1.352290, input_b=1.276735, input_c=1.342787, input_d=1.289990 <------> result=3.458699, expected_result=3.458699
+# storing a(hex):3f9c2365
+# storing a(float):1.219830
+# storing b(hex):3fc734a8
+# storing b(float):1.556294
+# storing c(hex):3f9fa435
+# storing c(float):1.247199
+# storing d(hex):3fcf7e37
+# storing d(float):1.621039
+# storing out(hex):407ae41d
+# storing out(float):3.920173
+# input_a=1.219830, input_b=1.556294, input_c=1.247199, input_d=1.621039 <------> result=3.920173, expected_result=3.920173
+# storing a(hex):3ff180bc
+# storing a(float):1.886741
+# storing b(hex):3fd3ade5
+# storing b(float):1.653744
+# storing c(hex):3fc79e24
+# storing c(float):1.559514
+# storing d(hex):3fcb8852
+# storing d(float):1.590098
+# storing out(hex):40b332ec
+# storing out(float):5.599966
+# input_a=1.886741, input_b=1.653744, input_c=1.559514, input_d=1.590098 <------> result=5.599966, expected_result=5.599966
+# storing a(hex):3fb30301
+# storing a(float):1.398529
+# storing b(hex):3ff10c5b
+# storing b(float):1.883190
+# storing c(hex):3ff19928
+# storing c(float):1.887486
+# storing d(hex):3fc94dd4
+# storing d(float):1.572688
+# storing out(hex):40b34496
+# storing out(float):5.602122
+# input_a=1.398529, input_b=1.883190, input_c=1.887486, input_d=1.572688 <------> result=5.602122, expected_result=5.602122
+# storing a(hex):3fef5571
+# storing a(float):1.869795
+# storing b(hex):3f914870
+# storing b(float):1.135023
+# storing c(hex):3ff757d6
+# storing c(float):1.932368
+# storing d(hex):3f972b22
+# storing d(float):1.181004
+# storing out(hex):408cf0cd
+# storing out(float):4.404395
+# input_a=1.869795, input_b=1.135023, input_c=1.932368, input_d=1.181004 <------> result=4.404395, expected_result=4.404395
+# storing a(hex):3fdb4e6d
+# storing a(float):1.713331
+# storing b(hex):3fedb460
+# storing b(float):1.857067
+# storing c(hex):3fc2f0fa
+# storing c(float):1.522979
+# storing d(hex):3fd74daf
+# storing d(float):1.682058
+# storing out(hex):40b7cad5
+# storing out(float):5.743510
+# input_a=1.713331, input_b=1.857067, input_c=1.522979, input_d=1.682058 <------> result=5.743510, expected_result=5.743510
+# storing a(hex):3f84280e
+# storing a(float):1.032472
+# storing b(hex):3fd58140
+# storing b(float):1.668007
+# storing c(hex):3fbc21fd
+# storing c(float):1.469787
+# storing d(hex):3faa9546
+# storing d(float):1.332680
+# storing out(hex):406b9452
+# storing out(float):3.680928
+# input_a=1.032472, input_b=1.668007, input_c=1.469787, input_d=1.332680 <------> result=3.680928, expected_result=3.680928
+# storing a(hex):3f84234f
+# storing a(float):1.032328
+# storing b(hex):3f86af3d
+# storing b(float):1.052223
+# storing c(hex):3f9e74fe
+# storing c(float):1.237945
+# storing d(hex):3f88df17
+# storing d(float):1.069308
+# storing out(hex):401a3d2c
+# storing out(float):2.409984
+# input_a=1.032328, input_b=1.052223, input_c=1.237945, input_d=1.069308 <------> result=2.409984, expected_result=2.409984
+# storing a(hex):3f84b08d
+# storing a(float):1.036638
+# storing b(hex):3fcb57ec
+# storing b(float):1.588621
+# storing c(hex):3ff750f7
+# storing c(float):1.932158
+# storing d(hex):3fc37d87
+# storing d(float):1.527268
+# storing out(hex):409320c2
+# storing out(float):4.597749
+# input_a=1.036638, input_b=1.588621, input_c=1.932158, input_d=1.527268 <------> result=4.597749, expected_result=4.597749
+# storing a(hex):3fb739f2
+# storing a(float):1.431456
+# storing b(hex):3faf959b
+# storing b(float):1.371753
+# storing c(hex):3f896de2
+# storing c(float):1.073666
+# storing d(hex):3faf8d84
+# storing d(float):1.371506
+# storing out(hex):405be9c6
+# storing out(float):3.436143
+# input_a=1.431456, input_b=1.371753, input_c=1.073666, input_d=1.371506 <------> result=3.436143, expected_result=3.436143
+# storing a(hex):3f87685d
+# storing a(float):1.057872
+# storing b(hex):3f9ec519
+# storing b(float):1.240390
+# storing c(hex):3f8b3584
+# storing c(float):1.087571
+# storing d(hex):3f90dcc5
+# storing d(float):1.131737
+# storing out(hex):4022c0d2
+# storing out(float):2.543019
+# input_a=1.057872, input_b=1.240390, input_c=1.087571, input_d=1.131737 <------> result=2.543019, expected_result=2.543019
+# storing a(hex):3fbba439
+# storing a(float):1.465949
+# storing b(hex):3fbc483b
+# storing b(float):1.470954
+# storing c(hex):3fca157a
+# storing c(float):1.578780
+# storing d(hex):3fb03260
+# storing d(float):1.376537
+# storing out(hex):408a8c0a
+# storing out(float):4.329595
+# input_a=1.465949, input_b=1.470954, input_c=1.578780, input_d=1.376537 <------> result=4.329595, expected_result=4.329594
+# storing a(hex):3fd85561
+# storing a(float):1.690106
+# storing b(hex):3fbc1989
+# storing b(float):1.469529
+# storing c(hex):3fcc6c06
+# storing c(float):1.597047
+# storing d(hex):3fa6221e
+# storing d(float):1.297916
+# storing out(hex):4091cec8
+# storing out(float):4.556492
+# input_a=1.690106, input_b=1.469529, input_c=1.597047, input_d=1.297916 <------> result=4.556492, expected_result=4.556492
+# storing a(hex):3fa7b5f8
+# storing a(float):1.310241
+# storing b(hex):3fe406a9
+# storing b(float):1.781453
+# storing c(hex):3fabe0f5
+# storing c(float):1.342803
+# storing d(hex):3f972c0b
+# storing d(float):1.181032
+# storing out(hex):407ae1b0
+# storing out(float):3.920025
+# input_a=1.310241, input_b=1.781453, input_c=1.342803, input_d=1.181032 <------> result=3.920025, expected_result=3.920025
+# storing a(hex):3ff97a65
+# storing a(float):1.949048
+# storing b(hex):3f99b56c
+# storing b(float):1.200849
+# storing c(hex):3fe95977
+# storing c(float):1.823043
+# storing d(hex):3fb0db63
+# storing d(float):1.381695
+# storing out(hex):409b8038
+# storing out(float):4.859402
+# input_a=1.949048, input_b=1.200849, input_c=1.823043, input_d=1.381695 <------> result=4.859402, expected_result=4.859401
+# storing a(hex):3f934018
+# storing a(float):1.150393
+# storing b(hex):3fb80e72
+# storing b(float):1.437941
+# storing c(hex):3fad3788
+# storing c(float):1.353257
+# storing d(hex):3faddc56
+# storing d(float):1.358287
+# storing out(hex):405f81fe
+# storing out(float):3.492309
+# input_a=1.150393, input_b=1.437941, input_c=1.353257, input_d=1.358287 <------> result=3.492309, expected_result=3.492309
+# storing a(hex):3ff56acf
+# storing a(float):1.917322
+# storing b(hex):3fae8fe9
+# storing b(float):1.363767
+# storing c(hex):3ffd33f4
+# storing c(float):1.978148
+# storing d(hex):3fa327da
+# storing d(float):1.274654
+# storing out(hex):40a45c07
+# storing out(float):5.136234
+# input_a=1.917322, input_b=1.363767, input_c=1.978148, input_d=1.274654 <------> result=5.136234, expected_result=5.136234
+# storing a(hex):3fac8569
+# storing a(float):1.347821
+# storing b(hex):3fb08ac4
+# storing b(float):1.379235
+# storing c(hex):3faeeb2a
+# storing c(float):1.366552
+# storing d(hex):3fa73354
+# storing d(float):1.306254
+# storing out(hex):406937b6
+# storing out(float):3.644025
+# input_a=1.347821, input_b=1.379235, input_c=1.366552, input_d=1.306254 <------> result=3.644025, expected_result=3.644026
+# storing a(hex):3fe6eb56
+# storing a(float):1.804057
+# storing b(hex):3fb57fb6
+# storing b(float):1.417960
+# storing c(hex):3fdd1f49
+# storing c(float):1.727517
+# storing d(hex):3ff6f04d
+# storing d(float):1.929208
+# storing out(hex):40bc819c
+# storing out(float):5.890821
+# input_a=1.804057, input_b=1.417960, input_c=1.727517, input_d=1.929208 <------> result=5.890821, expected_result=5.890821
+# storing a(hex):3fd18c22
+# storing a(float):1.637089
+# storing b(hex):3f86cbea
+# storing b(float):1.053098
+# storing c(hex):3fdb6de1
+# storing c(float):1.714291
+# storing d(hex):3fa49733
+# storing d(float):1.285864
+# storing out(hex):407b6a42
+# storing out(float):3.928360
+# input_a=1.637089, input_b=1.053098, input_c=1.714291, input_d=1.285864 <------> result=3.928360, expected_result=3.928360
+# storing a(hex):3f8b4439
+# storing a(float):1.088019
+# storing b(hex):3fa4288e
+# storing b(float):1.282488
+# storing c(hex):3f891c44
+# storing c(float):1.071175
+# storing d(hex):3f9222f4
+# storing d(float):1.141692
+# storing out(hex):4027929c
+# storing out(float):2.618323
+# input_a=1.088019, input_b=1.282488, input_c=1.071175, input_d=1.141692 <------> result=2.618323, expected_result=2.618323
+# storing a(hex):3f95dc3b
+# storing a(float):1.170783
+# storing b(hex):3f8c70e5
+# storing b(float):1.097195
+# storing c(hex):3f94b5a8
+# storing c(float):1.161794
+# storing d(hex):3fab1ec7
+# storing d(float):1.336877
+# storing out(hex):40359dbe
+# storing out(float):2.837753
+# input_a=1.170783, input_b=1.097195, input_c=1.161794, input_d=1.336877 <------> result=2.837753, expected_result=2.837753
+# storing a(hex):3fb87cd9
+# storing a(float):1.441310
+# storing b(hex):3feb2703
+# storing b(float):1.837128
+# storing c(hex):3fbf9af6
+# storing c(float):1.496917
+# storing d(hex):3fa194b1
+# storing d(float):1.262350
+# storing out(hex):4091333c
+# storing out(float):4.537504
+# input_a=1.441310, input_b=1.837128, input_c=1.496917, input_d=1.262350 <------> result=4.537504, expected_result=4.537504
+# storing a(hex):3fe4cf61
+# storing a(float):1.787579
+# storing b(hex):3fd98d10
+# storing b(float):1.699617
+# storing c(hex):3fa8033c
+# storing c(float):1.312599
+# storing d(hex):3fd8d9b7
+# storing d(float):1.694144
+# storing out(hex):40a861be
+# storing out(float):5.261931
+# input_a=1.787579, input_b=1.699617, input_c=1.312599, input_d=1.694144 <------> result=5.261931, expected_result=5.261931
+# storing a(hex):3fd36c1f
+# storing a(float):1.651737
+# storing b(hex):3fbde2ac
+# storing b(float):1.483480
+# storing c(hex):3f98f8b4
+# storing c(float):1.195090
+# storing d(hex):3fdda9a0
+# storing d(float):1.731739
+# storing out(hex):4090a30a
+# storing out(float):4.519902
+# input_a=1.651737, input_b=1.483480, input_c=1.195090, input_d=1.731739 <------> result=4.519902, expected_result=4.519903
+# storing a(hex):3fbd32fa
+# storing a(float):1.478118
+# storing b(hex):3fe57134
+# storing b(float):1.792517
+# storing c(hex):3fb50e6b
+# storing c(float):1.414503
+# storing d(hex):3fc3f3f7
+# storing d(float):1.530883
+# storing out(hex):409a1466
+# storing out(float):4.814990
+# input_a=1.478118, input_b=1.792517, input_c=1.414503, input_d=1.530883 <------> result=4.814990, expected_result=4.814990
+# storing a(hex):3fb71f1d
+# storing a(float):1.430637
+# storing b(hex):3fe87adb
+# storing b(float):1.816249
+# storing c(hex):3fbb4284
+# storing c(float):1.462967
+# storing d(hex):3ff3ad90
+# storing d(float):1.903734
+# storing out(hex):40ac4596
+# storing out(float):5.383494
+# input_a=1.430637, input_b=1.816249, input_c=1.462967, input_d=1.903734 <------> result=5.383494, expected_result=5.383494
+# storing a(hex):3fddd456
+# storing a(float):1.733042
+# storing b(hex):3fdd49b4
+# storing b(float):1.728812
+# storing c(hex):3fcd767d
+# storing c(float):1.605178
+# storing d(hex):3fc34a08
+# storing d(float):1.525697
+# storing out(hex):40ae3e6c
+# storing out(float):5.445120
+# input_a=1.733042, input_b=1.728812, input_c=1.605178, input_d=1.525697 <------> result=5.445120, expected_result=5.445120
+# storing a(hex):3fabc3e5
+# storing a(float):1.341916
+# storing b(hex):3faca81a
+# storing b(float):1.348880
+# storing c(hex):3faeb811
+# storing c(float):1.364992
+# storing d(hex):3faad12b
+# storing d(float):1.334508
+# storing out(hex):40686d65
+# storing out(float):3.631677
+# input_a=1.341916, input_b=1.348880, input_c=1.364992, input_d=1.334508 <------> result=3.631677, expected_result=3.631677
+# storing a(hex):3fd37e06
+# storing a(float):1.652283
+# storing b(hex):3fc3072e
+# storing b(float):1.523657
+# storing c(hex):3fdb3615
+# storing c(float):1.712588
+# storing d(hex):3fc1830c
+# storing d(float):1.511812
+# storing out(hex):40a36975
+# storing out(float):5.106623
+# input_a=1.652283, input_b=1.523657, input_c=1.712588, input_d=1.511812 <------> result=5.106623, expected_result=5.106623
+# storing a(hex):3fcdb33d
+# storing a(float):1.607032
+# storing b(hex):3fa518bc
+# storing b(float):1.289817
+# storing c(hex):3ff24c14
+# storing c(float):1.892947
+# storing d(hex):3fa42d9d
+# storing d(float):1.282642
+# storing out(hex):40900628
+# storing out(float):4.500751
+# input_a=1.607032, input_b=1.289817, input_c=1.892947, input_d=1.282642 <------> result=4.500751, expected_result=4.500751
+# storing a(hex):3ff3b498
+# storing a(float):1.903949
+# storing b(hex):3fb55d90
+# storing b(float):1.416918
+# storing c(hex):3ff374c1
+# storing c(float):1.902001
+# storing d(hex):3f9f022f
+# storing d(float):1.242254
+# storing out(hex):40a1efac
+# storing out(float):5.060507
+# input_a=1.903949, input_b=1.416918, input_c=1.902001, input_d=1.242254 <------> result=5.060507, expected_result=5.060507
+# storing a(hex):3fe51a5e
+# storing a(float):1.789867
+# storing b(hex):3fc6ee09
+# storing b(float):1.554139
+# storing c(hex):3fff55b7
+# storing c(float):1.994803
+# storing d(hex):3fd02679
+# storing d(float):1.626174
+# storing out(hex):40c0d1b8
+# storing out(float):6.025600
+# input_a=1.789867, input_b=1.554139, input_c=1.994803, input_d=1.626174 <------> result=6.025600, expected_result=6.025600
+# storing a(hex):3fe25cf2
+# storing a(float):1.768461
+# storing b(hex):3fc0c5dd
+# storing b(float):1.506038
+# storing c(hex):3ff2407b
+# storing c(float):1.892593
+# storing d(hex):3fdafa14
+# storing d(float):1.710757
+# storing out(hex):40bcd61c
+# storing out(float):5.901136
+# input_a=1.768461, input_b=1.506038, input_c=1.892593, input_d=1.710757 <------> result=5.901136, expected_result=5.901137
+# storing a(hex):3fd2861d
+# storing a(float):1.644718
+# storing b(hex):3ff84293
+# storing b(float):1.939532
+# storing c(hex):3fdeb8b8
+# storing c(float):1.740012
+# storing d(hex):3fe2623a
+# storing d(float):1.768623
+# storing out(hex):40c88e9a
+# storing out(float):6.267407
+# input_a=1.644718, input_b=1.939532, input_c=1.740012, input_d=1.768623 <------> result=6.267407, expected_result=6.267407
+# storing a(hex):3f85da67
+# storing a(float):1.045728
+# storing b(hex):3fbe5f1b
+# storing b(float):1.487277
+# storing c(hex):3f9affb8
+# storing c(float):1.210929
+# storing d(hex):3fbf5b9c
+# storing d(float):1.494983
+# storing out(hex):40576614
+# storing out(float):3.365605
+# input_a=1.045728, input_b=1.487277, input_c=1.210929, input_d=1.494983 <------> result=3.365605, expected_result=3.365605
+# storing a(hex):3fedb97b
+# storing a(float):1.857223
+# storing b(hex):3fd8c068
+# storing b(float):1.693372
+# storing c(hex):3ff7c00a
+# storing c(float):1.935548
+# storing d(hex):3ff41099
+# storing d(float):1.906757
+# storing out(hex):40dabd22
+# storing out(float):6.835588
+# input_a=1.857223, input_b=1.693372, input_c=1.935548, input_d=1.906757 <------> result=6.835588, expected_result=6.835588
+# storing a(hex):3fd2b82b
+# storing a(float):1.646245
+# storing b(hex):3ffc0a68
+# storing b(float):1.969068
+# storing c(hex):3fcc986f
+# storing c(float):1.598402
+# storing d(hex):3fc5c3a7
+# storing d(float):1.545033
+# storing out(hex):40b6c1c3
+# storing out(float):5.711153
+# input_a=1.646245, input_b=1.969068, input_c=1.598402, input_d=1.545033 <------> result=5.711153, expected_result=5.711153
+# storing a(hex):3fd0d367
+# storing a(float):1.631451
+# storing b(hex):3fc8194f
+# storing b(float):1.563272
+# storing c(hex):3fd1fada
+# storing c(float):1.640468
+# storing d(hex):3fc2d200
+# storing d(float):1.522034
+# storing out(hex):40a18314
+# storing out(float):5.047251
+# input_a=1.631451, input_b=1.563272, input_c=1.640468, input_d=1.522034 <------> result=5.047251, expected_result=5.047250
+# storing a(hex):3fc70c5f
+# storing a(float):1.555065
+# storing b(hex):3fddec74
+# storing b(float):1.733778
+# storing c(hex):3fceff63
+# storing c(float):1.617169
+# storing d(hex):3f9546a3
+# storing d(float):1.166218
+# storing out(hex):4092a0a5
+# storing out(float):4.582110
+# input_a=1.555065, input_b=1.733778, input_c=1.617169, input_d=1.166218 <------> result=4.582110, expected_result=4.582110
+# storing a(hex):3fc5665a
+# storing a(float):1.542186
+# storing b(hex):3fa77796
+# storing b(float):1.308337
+# storing c(hex):3fcd7f41
+# storing c(float):1.605446
+# storing d(hex):3fd46a9f
+# storing d(float):1.659504
+# storing out(hex):4095d27a
+# storing out(float):4.681943
+# input_a=1.542186, input_b=1.308337, input_c=1.605446, input_d=1.659504 <------> result=4.681943, expected_result=4.681943
+# storing a(hex):3fc51795
+# storing a(float):1.539782
+# storing b(hex):3f9e8dad
+# storing b(float):1.238699
+# storing c(hex):3fc7952c
+# storing c(float):1.559240
+# storing d(hex):3f8062b6
+# storing d(float):1.003012
+# storing out(hex):405e292c
+# storing out(float):3.471263
+# input_a=1.539782, input_b=1.238699, input_c=1.559240, input_d=1.003012 <------> result=3.471263, expected_result=3.471263
+# storing a(hex):3f82a729
+# storing a(float):1.020726
+# storing b(hex):3fcfd4ba
+# storing b(float):1.623679
+# storing c(hex):3fc6ac5b
+# storing c(float):1.552135
+# storing d(hex):3fd81576
+# storing d(float):1.688155
+# storing out(hex):4088e1e8
+# storing out(float):4.277576
+# input_a=1.020726, input_b=1.623679, input_c=1.552135, input_d=1.688155 <------> result=4.277576, expected_result=4.277576
+# storing a(hex):3fcd5a64
+# storing a(float):1.604321
+# storing b(hex):3fc4f774
+# storing b(float):1.538802
+# storing c(hex):3fdb1bce
+# storing c(float):1.711786
+# storing d(hex):3fc4120b
+# storing d(float):1.531801
+# storing out(hex):40a2e838
+# storing out(float):5.090847
+# input_a=1.604321, input_b=1.538802, input_c=1.711786, input_d=1.531801 <------> result=5.090847, expected_result=5.090847
+# storing a(hex):3fa65b7e
+# storing a(float):1.299667
+# storing b(hex):3fd36d32
+# storing b(float):1.651770
+# storing c(hex):3fcf170f
+# storing c(float):1.617891
+# storing d(hex):3fac8b74
+# storing d(float):1.348006
+# storing out(hex):408a7c56
+# storing out(float):4.327678
+# input_a=1.299667, input_b=1.651770, input_c=1.617891, input_d=1.348006 <------> result=4.327678, expected_result=4.327678
+# storing a(hex):3fb0244d
+# storing a(float):1.376108
+# storing b(hex):3fefa5a6
+# storing b(float):1.872243
+# storing c(hex):3fa6b32f
+# storing c(float):1.302343
+# storing d(hex):3fe58ccb
+# storing d(float):1.793359
+# storing out(hex):409d2eea
+# storing out(float):4.911977
+# input_a=1.376108, input_b=1.872243, input_c=1.302343, input_d=1.793359 <------> result=4.911977, expected_result=4.911977
+# storing a(hex):3f9f8173
+# storing a(float):1.246138
+# storing b(hex):3f9b5717
+# storing b(float):1.213595
+# storing c(hex):3f8717ac
+# storing c(float):1.055410
+# storing d(hex):3fb4d368
+# storing d(float):1.412702
+# storing out(hex):404035d8
+# storing out(float):3.003286
+# input_a=1.246138, input_b=1.213595, input_c=1.055410, input_d=1.412702 <------> result=3.003286, expected_result=3.003286
+# storing a(hex):3feb7afa
+# storing a(float):1.839690
+# storing b(hex):3ff71aca
+# storing b(float):1.930505
+# storing c(hex):3fd76db0
+# storing c(float):1.683035
+# storing d(hex):3fe5144b
+# storing d(float):1.789682
+# storing out(hex):40d2093f
+# storing out(float):6.563629
+# input_a=1.839690, input_b=1.930505, input_c=1.683035, input_d=1.789682 <------> result=6.563629, expected_result=6.563629
+# storing a(hex):3fb77faf
+# storing a(float):1.433584
+# storing b(hex):3ff1e9a8
+# storing b(float):1.889943
+# storing c(hex):3fe08663
+# storing c(float):1.754101
+# storing d(hex):3fe5f531
+# storing d(float):1.796545
+# storing out(hex):40bb8af8
+# storing out(float):5.860714
+# input_a=1.433584, input_b=1.889943, input_c=1.754101, input_d=1.796545 <------> result=5.860714, expected_result=5.860714
+# storing a(hex):3fbf698f
+# storing a(float):1.495409
+# storing b(hex):3faffc7a
+# storing b(float):1.374892
+# storing c(hex):3fa177ef
+# storing c(float):1.261473
+# storing d(hex):3fa5fbe9
+# storing d(float):1.296750
+# storing out(hex):406c4720
+# storing out(float):3.691841
+# input_a=1.495409, input_b=1.374892, input_c=1.261473, input_d=1.296750 <------> result=3.691841, expected_result=3.691841
+# storing a(hex):3fde3272
+# storing a(float):1.735914
+# storing b(hex):3f86c41a
+# storing b(float):1.052860
+# storing c(hex):3fbd5701
+# storing c(float):1.479218
+# storing d(hex):3f8ed337
+# storing d(float):1.115821
+# storing out(hex):405e9b17
+# storing out(float):3.478216
+# input_a=1.735914, input_b=1.052860, input_c=1.479218, input_d=1.115821 <------> result=3.478216, expected_result=3.478216
+# storing a(hex):3fb3d6d9
+# storing a(float):1.404994
+# storing b(hex):3fbede91
+# storing b(float):1.491167
+# storing c(hex):3fa133e4
+# storing c(float):1.259396
+# storing d(hex):3fb2c4ed
+# storing d(float):1.396635
+# ** Note: $finish    : ../sim/testbench_operation1.sv(168)
+#    Time: 100035 ps  Iteration: 0  Instance: /tb

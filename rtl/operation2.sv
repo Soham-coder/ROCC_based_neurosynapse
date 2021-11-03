@@ -11,10 +11,10 @@ module operation2(
     input_b,
     input_c,
     input_d,
-    op3_input_STB,
-    op3_BUSY,
+    op2_input_STB,
+    op2_BUSY,
     output_result,
-    op3_output_STB,
+    op2_output_STB,
     output_module_BUSY
    );
 
@@ -26,12 +26,12 @@ module operation2(
    input [31:0] input_c;
    input [31:0] input_d;
    
-   input     op3_input_STB;
-   output    op3_BUSY;
+   input     op2_input_STB;
+   output    op2_BUSY;
   
    output    [31:0] output_result;
   
-   output    op3_output_STB;
+   output    op2_output_STB;
    input     output_module_BUSY;
    
 
@@ -77,11 +77,11 @@ adder adder_inst
         (
         .input_a(result1_reg),
         .input_b(result2_reg),
-		.adder_input_STB(adder_input_STB),
-		.adder_BUSY(adder_BUSY),
+		    .adder_input_STB(adder_input_STB),
+		    .adder_BUSY(adder_BUSY),
         .clk(clk),
         .rst(rst),
-		.output_sum(output_result_reg),
+		    .output_sum(output_result_reg),
         .adder_output_STB(adder_output_STB),
         .output_module_BUSY(adder_output_module_BUSY)
 		);
@@ -89,30 +89,31 @@ adder adder_inst
 
 //reg [31:0] a,b,c,d;
 //reg mult_input_STB1, mult_input_STB2;
-reg op3_BUSY_reg, op3_output_STB_reg;
+reg op2_BUSY_reg, op2_output_STB_reg;
 reg [31:0] output_result_temp;
 
 assign output_result = output_result_temp; 
-assign op3_output_STB =  op3_output_STB_reg;
-assign op3_BUSY = op3_BUSY_reg;
+assign op2_output_STB =  op2_output_STB_reg;
+assign op2_BUSY = op2_BUSY_reg;
 
-typedef enum logic[2:0] 
-{
-  get_a_b_start_div = 0,
-  wait_for_div1_comp = 1,
-  get_c_d_start_div = 2,
-  wait_for_div2_comp = 3,
-  start_add = 4,
-  finish = 5,
-  wait_for_add_comp = 6
-}
-state_t;
 
+
+parameter  get_a_b_start_div = 3'b000;
+parameter  deassert_div_input_STB1 = 3'b001;
+parameter  wait_for_div1_comp = 3'b010;
+parameter  get_c_d_start_div = 3'b011;
+parameter  wait_for_div2_comp = 3'b100;
+parameter  start_add = 3'b101;
+parameter  finish = 3'b110;
+parameter  wait_for_add_comp = 3'b111;
  
 
-state_t current_state;
+reg [2:0] current_state;
 
 always@(posedge clk)
+begin
+  
+if(!rst)
 begin
   
 case(current_state)
@@ -120,20 +121,26 @@ case(current_state)
   
 get_a_b_start_div:
   begin
-    op3_BUSY_reg <= 0;
-    if(op3_input_STB && !op3_BUSY)
+    op2_BUSY_reg <= 0;
+    if(op2_input_STB && !op2_BUSY_reg)
     begin
     a<= input_a;
     b<= input_b;
     div_input_STB1 <= 1'b1;
-    op3_BUSY_reg <= 1'b1;
+    op2_BUSY_reg <= 1'b1;
+    current_state <= deassert_div_input_STB1;
+    end
+  end
+
+deassert_div_input_STB1:
+  begin
     if(div_input_STB1 && div_BUSY1)
       begin
         div_input_STB1 <= 1'b0;
         output_BUSY1 <= 1'b0;
         current_state <= wait_for_div1_comp;
       end
-    end
+
   end
   
 wait_for_div1_comp:
@@ -184,7 +191,7 @@ wait_for_add_comp:
     begin
       if(adder_output_STB && !adder_output_module_BUSY)
         begin
-            op3_output_STB_reg <= 1'b1;
+            op2_output_STB_reg <= 1'b1;
             output_result_temp <= output_result_reg;
             adder_output_module_BUSY <= 1'b1;
             current_state <= finish;
@@ -193,9 +200,9 @@ wait_for_add_comp:
 
 finish:
   begin
-    if(op3_output_STB_reg && !output_module_BUSY)
+    if(op2_output_STB_reg && !output_module_BUSY)
       begin
-        op3_output_STB_reg <= 1'b0;
+        op2_output_STB_reg <= 1'b0;
         current_state <= get_a_b_start_div;
       end
   end
@@ -204,19 +211,17 @@ endcase
 
 end
 
-always@(posedge clk)
+if(rst)
 begin
-  if(rst)
-    begin
-    op3_BUSY_reg <= 0;
-    op3_output_STB_reg <= 0;
-    adder_input_STB <= 0;
-    div_input_STB1 <= 0;
-    div_input_STB2 <= 0;
-    current_state <= get_a_b_start_div;
-    end
+op2_BUSY_reg <= 0;
+op2_output_STB_reg <= 0;
+adder_input_STB <= 0;
+div_input_STB1 <= 0;
+div_input_STB2 <= 0;
+current_state <= get_a_b_start_div;
 end
 
+end
 
 endmodule : operation2
 

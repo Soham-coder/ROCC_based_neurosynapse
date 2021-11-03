@@ -91,6 +91,8 @@ funct7 = operation1/operation2/operation3
          operation1 = 7'b0000_001
          operation2 = 7'b0000_010
          operation3 = 7'b0000_011
+		 operation4 = 7'b0000_100
+		 operation5 = 7'b0000_101
 
 ```
 
